@@ -4,14 +4,14 @@ import { Seasons } from "@/components/Seasons";
 import { Staff } from "@/components/Staff";
 
 export default function Home() {
-  return (
+	return (
 		<>
 			<Hero />
-      <main>
-        <About />
-        <Seasons />
-        <Staff />
-      </main>
+			<main>
+				<About />
+				<Seasons />
+				<Staff />
+			</main>
 		</>
-  );
+	);
 }
