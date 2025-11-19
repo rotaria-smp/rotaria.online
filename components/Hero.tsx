@@ -1,4 +1,4 @@
-import { ExternalLink, Map } from "lucide-react";
+import { ExternalLink, Map as LMap } from "lucide-react";
 import { PanningBackground } from "./ui/PanningImage";
 
 export function Hero() {
@@ -44,7 +44,7 @@ export function Hero() {
 							rel="noopener noreferrer"
 							className="minecraft-button-secondary inline-flex items-center gap-3"
 						>
-							<Map size={24} />
+							<LMap size={24} />
 							World Map
 						</a>
 					</div>

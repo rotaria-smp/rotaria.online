@@ -57,6 +57,7 @@ export function Navigation() {
 						<button
 							onClick={() => setIsOpen(!isOpen)}
 							className="text-gray-300 hover:text-white transition-colors"
+							type="button"
 						>
 							{isOpen ? <X size={28} /> : <Menu size={28} />}
 						</button>

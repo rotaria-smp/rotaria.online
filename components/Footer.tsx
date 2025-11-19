@@ -1,4 +1,4 @@
-import { ExternalLink, Map, MessageCircle } from "lucide-react";
+import { ExternalLink, Map as LMap, MessageCircle } from "lucide-react";
 
 export function Footer() {
 	const links: { discord_url?: string; bluemap_url?: string } | undefined = {};
@@ -85,7 +85,7 @@ export function Footer() {
 								rel="noopener noreferrer"
 								className="flex items-center gap-2 text-gray-300 hover:text-orange-400 transition-colors font-semibold"
 							>
-								<Map size={20} />
+								<LMap size={20} />
 								World Map
 							</a>
 							<a
