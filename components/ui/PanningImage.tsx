@@ -1,6 +1,10 @@
-import { useRef, useEffect, useState } from 'react';
+"use client";
+import { useRef, useEffect, useState, useMemo } from 'react';
 import { Canvas, useFrame, useLoader } from '@react-three/fiber';
+import Image from "next/image";
+
 import * as THREE from 'three';
+import { isWebGLReallyEnabled } from '@/lib/utils';
 
 interface PanningImageProps {
   url: string;
@@ -30,11 +34,25 @@ function PanningImage({ url, speed = 0.01 }: PanningImageProps) {
   );
 }
 
-export function PanningBackground({url = "/sample_image.png"}: {url: string}) {
+export function PanningBackground({url = "/sample_image.png"}: {url?: string}) {
   const [webglReady, setWebglReady] = useState(false);
+	const isWebGlEnabled = useMemo(() => isWebGLReallyEnabled(), [])
 
+	// TODO : fix hydrationerror
+	if (!isWebGlEnabled) {
+		return (
+			<div className="minecraft-scroll-layer" suppressHydrationWarning >
+        <div className="minecraft-scroll-image" />
+        <div className="minecraft-scroll-image" />
+        <div className="minecraft-scroll-image" />
+      </div>
+		)
+	}
+
+	// Webgl based with fallback image
   return (
     <div
+			suppressHydrationWarning
       style={{
         position: 'fixed',
         inset: 0,
@@ -42,10 +60,11 @@ export function PanningBackground({url = "/sample_image.png"}: {url: string}) {
         overflow: 'hidden',
       }}
     >
-      <img
+      <Image
         src={url}
-        loading="lazy"
         alt="Background"
+				width={720}
+				height={480}
         style={{
           position: 'absolute',
           inset: 0,

@@ -1,5 +1,5 @@
 import { ExternalLink, Map } from 'lucide-react';
-import { HeroImage } from './ui/HeroImage';
+import { PanningBackground } from './ui/PanningImage';
 
 export function Hero() {
   const links = {
@@ -12,7 +12,7 @@ export function Hero() {
       id="home"
       className="relative w-full py-32 overflow-hidden"
     >
-      <HeroImage />
+      <PanningBackground  />
 			
 			<div className="absolute inset-0 bg-linear-to-t from-gray-900 via-gray-900/40 to-transparent z-1"></div>
 
