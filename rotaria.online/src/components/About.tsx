@@ -20,7 +20,7 @@ export function About() {
     {
       icon: Shield,
       title: 'Fair & Safe Play',
-      description: 'Grief protection, clear rules, and active moderation so you can build without worry.'
+      description: 'Clear rules, and active moderation so you can build without worry.'
     }
   ];
 
@@ -62,20 +62,20 @@ export function About() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="flex items-center gap-2">
               <span className="font-bold text-orange-400 text-lg">Version:</span>
-              <span className="text-gray-200 font-semibold text-lg">1.20.1 (Modded)</span>
+              <span className="text-gray-200 font-semibold text-lg">1.21.1</span>
             </div>
             <div className="flex items-center gap-2">
               <span className="font-bold text-orange-400 text-lg">Mod Loader:</span>
-              <span className="text-gray-200 font-semibold text-lg">Fabric / Forge Hybrid</span>
+              <span className="text-gray-200 font-semibold text-lg">neoforge</span>
             </div>
             <div className="flex items-center gap-2">
               <span className="font-bold text-orange-400 text-lg">Players:</span>
-              <span className="text-gray-200 font-semibold text-lg">50 Slot Cap</span>
+              <span className="text-gray-200 font-semibold text-lg">24 Slot Cap</span>
             </div>
-            <div className="flex items-center gap-2">
+            {/* <div className="flex items-center gap-2">
               <span className="font-bold text-orange-400 text-lg">Difficulty:</span>
               <span className="text-gray-200 font-semibold text-lg">Survival (Tweaked)</span>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
