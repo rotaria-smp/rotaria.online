@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 import { isWebGLReallyEnabled } from "../../lib/utils";
-import PanningBackground from "./PanningImage";
+import { PanningBackground } from "./PanningImage";
 
 export const HeroImage = () => {
 	// Check if webgl enabled 

@@ -30,7 +30,7 @@ function PanningImage({ url, speed = 0.01 }: PanningImageProps) {
   );
 }
 
-export default function PanningBackground() {
+export function PanningBackground({url = "/sample_image.png"}: {url: string}) {
   const [webglReady, setWebglReady] = useState(false);
 
   return (
@@ -43,7 +43,7 @@ export default function PanningBackground() {
       }}
     >
       <img
-        src="/sample_image.png"
+        src={url}
         loading="lazy"
         alt="Background"
         style={{
@@ -71,7 +71,7 @@ export default function PanningBackground() {
           opacity: webglReady ? 1 : 0,
         }}
       >
-        <PanningImage url="/sample_image.png" speed={0.01} />
+        <PanningImage url={url} speed={0.01} />
       </Canvas>
     </div>
   );
