@@ -1,25 +1,25 @@
 import { ExternalLink, Map } from 'lucide-react';
-
-type HeroLinks = {
-  discord_url?: string;
-  bluemap_url?: string;
-};
+import PanningBackground from './ui/PanningImage';
+import { HeroImage } from './ui/HeroImage';
 
 export function Hero() {
-  const links: HeroLinks = {};
+  const links = {};
 
   return (
     <section
       id="home"
-      className="parallax-minecraft relative w-full py-32"
+      className="relative w-full py-32 overflow-hidden"
     >
-      <div className="minecraft-scroll-layer">
-        <div className="minecraft-scroll-image" />
-        <div className="minecraft-scroll-image" />
-        <div className="minecraft-scroll-image" />
-      </div>
+      <HeroImage />
 
-      <div className="parallax-content absolute inset-0 flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20">
+      <div className="absolute inset-0 -z-10 parallax-minecraft ">
+        <PanningBackground />
+      </div>
+			
+			<div className="absolute inset-0 bg-linear-to-t from-gray-900 via-gray-900/40 to-transparent z-1"></div>
+
+
+      <div className="parallax-content relative z-10 flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20">
         <div className="text-center max-w-4xl mx-auto">
           <h1 className="minecraft-title text-5xl sm:text-6xl md:text-7xl mb-8 text-white">
             Rotaria SMP
@@ -57,21 +57,15 @@ export function Hero() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
             <div className="minecraft-card">
               <div className="text-5xl font-bold text-orange-400 mb-3">60+</div>
-              <div className="text-xl text-gray-200 font-semibold">
-                Handpicked Mods
-              </div>
+              <div className="text-xl text-gray-200 font-semibold">Handpicked Mods</div>
             </div>
             <div className="minecraft-card">
               <div className="text-5xl font-bold text-orange-400 mb-3">24/7</div>
-              <div className="text-xl text-gray-200 font-semibold">
-                Always Online
-              </div>
+              <div className="text-xl text-gray-200 font-semibold">Always Online</div>
             </div>
             <div className="minecraft-card">
               <div className="text-5xl font-bold text-orange-400 mb-3">Friendly</div>
-              <div className="text-xl text-gray-200 font-semibold">
-                Active Community
-              </div>
+              <div className="text-xl text-gray-200 font-semibold">Active Community</div>
             </div>
           </div>
         </div>

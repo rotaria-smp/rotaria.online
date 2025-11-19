@@ -217,4 +217,54 @@ layer(base);
     border-color: #111827; /* gray-900 */
     color: #F3F4F6; /* gray-100 */
   }
+
+  .hero-blur-fade {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 50%;
+    pointer-events: none;
+    z-index: 2;
+
+    /* Background color fade */
+    background:
+      linear-gradient(
+        to top,
+        rgba(17,17,17,0.95) 0%,
+        rgba(17,17,17,0.70) 35%,
+        rgba(17,17,17,0.45) 60%,
+        rgba(17,17,17,0.20) 80%,
+        rgba(17,17,17,0.00) 100%
+      );
+
+    /* Apply strong blur, then fade it out using mask */
+    backdrop-filter: blur(26px) saturate(130%);
+    -webkit-backdrop-filter: blur(26px) saturate(130%);
+
+    /* Fade the blur intensity upward (mask) */
+    mask-image: linear-gradient(
+      to top,
+      rgba(0,0,0,1) 0%,
+      rgba(0,0,0,0.85) 30%,
+      rgba(0,0,0,0.55) 55%,
+      rgba(0,0,0,0.25) 75%,
+      rgba(0,0,0,0) 100%
+    );
+    -webkit-mask-image: linear-gradient(
+      to top,
+      rgba(0,0,0,1) 0%,
+      rgba(0,0,0,0.85) 30%,
+      rgba(0,0,0,0.55) 55%,
+      rgba(0,0,0,0.25) 75%,
+      rgba(0,0,0,0) 100%
+    );
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-blur-fade {
+      backdrop-filter: blur(14px) saturate(115%);
+      -webkit-backdrop-filter: blur(14px) saturate(115%);
+    }
+  }
 }
