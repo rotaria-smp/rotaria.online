@@ -22,7 +22,7 @@ export function Navigation() {
                 href={links?.discord_url || '#'}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="minecraft-button-primary !px-6 !py-2 !text-base"
+                className="minecraft-button-primary px-6! py-2! text-base!"
               >
                 Join Discord
               </a>
@@ -50,7 +50,7 @@ export function Navigation() {
               href={links?.discord_url || '#'}
               target="_blank"
               rel="noopener noreferrer"
-              className="block minecraft-button-primary !px-3 !py-2 !text-sm text-center"
+              className="block minecraft-button-primary px-3! py-2! text-sm! text-center"
             >
               Join Discord
             </a>

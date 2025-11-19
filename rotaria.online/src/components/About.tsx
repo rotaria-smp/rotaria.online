@@ -44,7 +44,7 @@ export function About() {
                 className="minecraft-card hover:border-emerald-500 transition-all transform hover:scale-105"
               >
                 <div className="flex items-start gap-4">
-                  <div className="p-3 bg-emerald-600 flex-shrink-0" style={{ boxShadow: 'inset -2px -2px 0 rgba(0,0,0,0.3), inset 2px 2px 0 rgba(255,255,255,0.2)' }}>
+                  <div className="p-3 bg-emerald-600 shrink-0" style={{ boxShadow: 'inset -2px -2px 0 rgba(0,0,0,0.3), inset 2px 2px 0 rgba(255,255,255,0.2)' }}>
                     <Icon className="text-white" size={28} />
                   </div>
                   <div>

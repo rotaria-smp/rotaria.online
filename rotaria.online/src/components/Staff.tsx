@@ -29,7 +29,7 @@ export function Staff() {
                 className="minecraft-card text-center hover:border-emerald-500 transition-all transform hover:scale-105"
               >
                 <div className="relative inline-block mb-6">
-                  <div className={`w-28 h-28 bg-gradient-to-br ${member.color_gradient} p-2 mx-auto`} style={{ boxShadow: 'inset -4px -4px 0 rgba(0,0,0,0.5), 0 4px 8px rgba(0,0,0,0.5)' }}>
+                  <div className={`w-28 h-28 bg-linear-to-br ${member.color_gradient} p-2 mx-auto`} style={{ boxShadow: 'inset -4px -4px 0 rgba(0,0,0,0.5), 0 4px 8px rgba(0,0,0,0.5)' }}>
                     <div className="w-full h-full bg-gray-700 flex items-center justify-center border-2 border-gray-900">
                       <IconComponent size={48} className="text-white" />
                     </div>
