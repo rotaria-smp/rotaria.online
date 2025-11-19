@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 /*
   The default border color has changed to `currentcolor` in Tailwind CSS v4,
@@ -9,7 +9,6 @@
   color utility to any element that depends on these defaults.
 */
 @layer base {
-
 	*,
 	::after,
 	::before,
@@ -21,7 +20,7 @@
 
 @utility minecraft-button {
 	@apply px-8 py-4 rounded-none border-4 border-solid font-bold text-lg transition-all transform active:scale-95 cursor-pointer relative;
-	font-family: 'Pixelify Sans', 'Arial', sans-serif;
+	font-family: "Pixelify Sans", "Arial", sans-serif;
 	box-shadow:
 		inset -4px -4px 0px rgba(0, 0, 0, 0.3),
 		inset 4px 4px 0px rgba(255, 255, 255, 0.2);
@@ -44,7 +43,7 @@
 
 @utility minecraft-title {
 	@apply font-bold;
-	font-family: 'Pixelify Sans', 'Arial', sans-serif;
+	font-family: "Pixelify Sans", "Arial", sans-serif;
 	text-shadow:
 		4px 4px 0px rgba(0, 0, 0, 0.8),
 		8px 8px 0px rgba(0, 0, 0, 0.3);
@@ -67,7 +66,7 @@
 
 	/* Dark overlay above background, below content */
 	&::after {
-		content: '';
+		content: "";
 		position: absolute;
 		inset: 0;
 		background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.55));
@@ -76,14 +75,14 @@
 	}
 
 	/* Foreground content on top */
-	&>.parallax-content {
+	& > .parallax-content {
 		position: relative;
 		z-index: 2;
 		animation: hero-fade-in 0.9s ease-out forwards;
 	}
 
 	@media (prefers-reduced-motion: reduce) {
-		&>.parallax-content {
+		& > .parallax-content {
 			animation: none;
 		}
 	}
@@ -112,23 +111,22 @@
 	/* Each half is the same Minecraft image */
 	flex: 0 0 50%;
 	height: 100%;
-	background-image: url('/sample_image_2.jpg');
+	background-image: url("/sample_image_2.jpg");
 	background-repeat: repeat-x;
 	background-size: auto 100%;
 	background-position: center;
 }
 
 @utility parallax-content {
-
 	/* Foreground content on top */
-	.parallax-minecraft>& {
+	.parallax-minecraft > & {
 		position: relative;
 		z-index: 2;
 		animation: hero-fade-in 0.9s ease-out forwards;
 	}
 
 	@media (prefers-reduced-motion: reduce) {
-		.parallax-minecraft>& {
+		.parallax-minecraft > & {
 			animation: none;
 		}
 	}
@@ -141,7 +139,7 @@
 
 	body {
 		@apply bg-gray-900 text-gray-100;
-		font-family: 'Pixelify Sans', 'Arial', sans-serif;
+		font-family: "Pixelify Sans", "Arial", sans-serif;
 	}
 
 	h1,
@@ -150,7 +148,7 @@
 	h4,
 	h5,
 	h6 {
-		font-family: 'Pixelify Sans', 'Arial', sans-serif;
+		font-family: "Pixelify Sans", "Arial", sans-serif;
 		font-weight: 700;
 		letter-spacing: 0.05em;
 	}
@@ -168,7 +166,6 @@
 	}
 
 	@keyframes float {
-
 		0%,
 		100% {
 			transform: translateY(0px);
@@ -211,15 +208,17 @@
 		/* tracking-wide */
 		border-color: transparent;
 		/* base will be overridden in variants */
-		box-shadow: inset -2px -2px 0 rgba(0, 0, 0, 0.3), inset 2px 2px 0 rgba(255, 255, 255, 0.15);
+		box-shadow:
+			inset -2px -2px 0 rgba(0, 0, 0, 0.3),
+			inset 2px 2px 0 rgba(255, 255, 255, 0.15);
 	}
 
 	.minecraft-badge-active {
-		background-color: #10B981;
+		background-color: #10b981;
 		/* emerald-500 */
 		border-color: #047857;
 		/* emerald-700 */
-		color: #FFFFFF;
+		color: #ffffff;
 	}
 
 	.minecraft-badge-completed {
@@ -227,7 +226,7 @@
 		/* gray-700 */
 		border-color: #111827;
 		/* gray-900 */
-		color: #F3F4F6;
+		color: #f3f4f6;
 		/* gray-100 */
 	}
 }

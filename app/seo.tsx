@@ -4,9 +4,10 @@ export const SEO: Metadata = {
 	metadataBase: new URL("https://rotaria.online"),
 	title: {
 		default: "Rotaria SMP – Modded Minecraft Community",
-		template: "%s | Rotaria SMP"
+		template: "%s | Rotaria SMP",
 	},
-	description: "Rotaria SMP is a relaxed, cooperative modded Minecraft survival server focusing on seasons, community projects, balanced tech & magic, and fair play.",
+	description:
+		"Rotaria SMP is a relaxed, cooperative modded Minecraft survival server focusing on seasons, community projects, balanced tech & magic, and fair play.",
 	keywords: [
 		"Rotaria SMP",
 		"modded minecraft server",
@@ -17,7 +18,7 @@ export const SEO: Metadata = {
 		"neo forge",
 		"minecraft seasons",
 		"survival multiplayer",
-		"minecraft automation"
+		"minecraft automation",
 	],
 	authors: [{ name: "Rotaria Staff" }],
 	creator: "Rotaria Staff",
@@ -34,9 +35,9 @@ export const SEO: Metadata = {
 				url: "/og-banner.jpg",
 				width: 1200,
 				height: 630,
-				alt: "Rotaria SMP Server Overview"
-			}
-		]
+				alt: "Rotaria SMP Server Overview",
+			},
+		],
 	},
 	twitter: {
 		card: "summary_large_image",
@@ -44,18 +45,18 @@ export const SEO: Metadata = {
 		creator: "@rotaria_smp",
 		title: "Rotaria SMP – Modded Minecraft Community",
 		description: "Season-based cooperative modded Minecraft survival.",
-		images: ["/og-banner.jpg"]
+		images: ["/og-banner.jpg"],
 	},
 	icons: {
 		icon: "/favicon.ico",
 		shortcut: "/favicon.ico",
-		apple: "/apple-touch-icon.png"
+		apple: "/apple-touch-icon.png",
 	},
 	themeColor: "#111111",
 	manifest: "/site.webmanifest",
 	category: "gaming",
 	alternates: {
-		canonical: "https://rotaria.online"
+		canonical: "https://rotaria.online",
 	},
 	robots: {
 		index: true,
@@ -65,7 +66,7 @@ export const SEO: Metadata = {
 			follow: true,
 			"max-image-preview": "large",
 			"max-snippet": -1,
-			"max-video-preview": -1
-		}
-	}
+			"max-video-preview": -1,
+		},
+	},
 };

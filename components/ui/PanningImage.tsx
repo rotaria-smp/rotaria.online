@@ -1,10 +1,10 @@
 "use client";
-import { useRef, useEffect, useState, useMemo } from 'react';
-import { Canvas, useFrame, useLoader } from '@react-three/fiber';
+import { useRef, useEffect, useState, useMemo } from "react";
+import { Canvas, useFrame, useLoader } from "@react-three/fiber";
 import Image from "next/image";
 
-import * as THREE from 'three';
-import { isWebGLReallyEnabled } from '@/lib/utils';
+import * as THREE from "three";
+import { isWebGLReallyEnabled } from "@/lib/utils";
 
 interface PanningImageProps {
 	url: string;
@@ -21,7 +21,7 @@ function PanningImage({ url, speed = 0.01 }: PanningImageProps) {
 	}, [texture]);
 
 	useFrame((_, delta) => {
-		if (materialRef.current && materialRef.current.map) {
+		if (materialRef.current?.map) {
 			materialRef.current.map.offset.x += speed * delta;
 		}
 	});
@@ -34,19 +34,23 @@ function PanningImage({ url, speed = 0.01 }: PanningImageProps) {
 	);
 }
 
-export function PanningBackground({ url = "/sample_image.png" }: { url?: string }) {
+export function PanningBackground({
+	url = "/sample_image.png",
+}: {
+	url?: string;
+}) {
 	const [webglReady, setWebglReady] = useState(false);
-	const isWebGlEnabled = useMemo(() => isWebGLReallyEnabled(), [])
+	const isWebGlEnabled = useMemo(() => isWebGLReallyEnabled(), []);
 
-	// TODO : fix hydrationerror
+	// TODO : fixa hydrationerror
 	if (!isWebGlEnabled) {
 		return (
-			<div className="minecraft-scroll-layer" suppressHydrationWarning >
+			<div className="minecraft-scroll-layer" suppressHydrationWarning>
 				<div className="minecraft-scroll-image" />
 				<div className="minecraft-scroll-image" />
 				<div className="minecraft-scroll-image" />
 			</div>
-		)
+		);
 	}
 
 	// Webgl based with fallback image
@@ -54,10 +58,10 @@ export function PanningBackground({ url = "/sample_image.png" }: { url?: string 
 		<div
 			suppressHydrationWarning
 			style={{
-				position: 'fixed',
+				position: "fixed",
 				inset: 0,
 				zIndex: -1,
-				overflow: 'hidden',
+				overflow: "hidden",
 			}}
 		>
 			<Image
@@ -66,14 +70,14 @@ export function PanningBackground({ url = "/sample_image.png" }: { url?: string 
 				width={720}
 				height={480}
 				style={{
-					position: 'absolute',
+					position: "absolute",
 					inset: 0,
-					width: '100%',
-					height: '100%',
-					objectFit: 'cover',
-					transition: 'opacity 0.5s ease',
+					width: "100%",
+					height: "100%",
+					objectFit: "cover",
+					transition: "opacity 0.5s ease",
 					opacity: webglReady ? 0 : 1,
-					pointerEvents: 'none',
+					pointerEvents: "none",
 				}}
 			/>
 
@@ -84,9 +88,9 @@ export function PanningBackground({ url = "/sample_image.png" }: { url?: string 
 					setWebglReady(true);
 				}}
 				style={{
-					width: '100%',
-					height: '100%',
-					transition: 'opacity 0.5s ease',
+					width: "100%",
+					height: "100%",
+					transition: "opacity 0.5s ease",
 					opacity: webglReady ? 1 : 0,
 				}}
 			>

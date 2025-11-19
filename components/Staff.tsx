@@ -55,7 +55,7 @@ export async function Staff() {
 				name,
 				headUrl: headUrl,
 			};
-		})
+		}),
 	);
 
 	return (
@@ -66,8 +66,8 @@ export async function Staff() {
 						Our Staff Team
 					</h2>
 					<p className="text-lg text-gray-200 max-w-3xl mx-auto font-semibold">
-						These are the people keeping Rotaria SMP stable, friendly, and moving
-						forward.
+						These are the people keeping Rotaria SMP stable, friendly, and
+						moving forward.
 					</p>
 				</div>
 
@@ -78,18 +78,12 @@ export async function Staff() {
 							className="minecraft-card text-center hover:border-orange-500 transition-all"
 						>
 							<div className="flex justify-center mb-4">
-								<PlayerHead
-									name={member.name}
-									url={member.headUrl}
-									size={64}
-								/>
+								<PlayerHead name={member.name} url={member.headUrl} size={64} />
 							</div>
 							<h3 className="minecraft-title text-xl mb-2 text-white">
 								{member.name}
 							</h3>
-							<p className="text-orange-400 font-bold mb-2">
-								{member.role}
-							</p>
+							<p className="text-orange-400 font-bold mb-2">{member.role}</p>
 							<p className="text-sm text-gray-300 font-semibold">
 								{member.description}
 							</p>
