@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	html {
+		scroll-behavior: smooth;
+	}
+
+	body {
+		@apply bg-gray-900 text-gray-100;
+		font-family: 'Pixelify Sans', 'Arial', sans-serif;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-family: 'Pixelify Sans', 'Arial', sans-serif;
+		font-weight: 700;
+		letter-spacing: 0.05em;
+	}
+}
+
+@keyframes parallax-scroll {
+	0% {
+		background-position: 0 0;
+	}
+
+	100% {
+		background-position: 64px 64px;
+	}
+}
+
+@keyframes float {
+
+	0%,
+	100% {
+		transform: translateY(0px);
+	}
+
+	50% {
+		transform: translateY(-15px);
+	}
+}
+
+@layer components {
+	.minecraft-button {
+		@apply px-8 py-4 rounded-none border-4 border-solid font-bold text-lg transition-all transform active:scale-95 cursor-pointer relative;
+		font-family: 'Pixelify Sans', 'Arial', sans-serif;
+		box-shadow: inset -4px -4px 0px rgba(0, 0, 0, 0.3), inset 4px 4px 0px rgba(255, 255, 255, 0.2);
+	}
+
+	.minecraft-button-primary {
+		@apply minecraft-button bg-emerald-500 border-emerald-700 hover:bg-emerald-600 text-white;
+	}
+
+	.minecraft-button-secondary {
+		@apply minecraft-button bg-gray-700 border-gray-900 hover:bg-gray-600 text-gray-100;
+	}
+
+	.minecraft-panel {
+		@apply bg-gray-800/80 border-4 border-solid border-gray-900 p-6;
+		box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.1), inset -1px -1px 0 rgba(0, 0, 0, 0.5);
+	}
+
+	.minecraft-title {
+		@apply font-bold;
+		font-family: 'Pixelify Sans', 'Arial', sans-serif;
+		text-shadow: 4px 4px 0px rgba(0, 0, 0, 0.8), 8px 8px 0px rgba(0, 0, 0, 0.3);
+	}
+
+	.minecraft-card {
+		@apply bg-gray-800/70 border-4 border-gray-900 p-6;
+		box-shadow: -4px -4px 0 rgba(255, 255, 255, 0.1), 4px 4px 0 rgba(0, 0, 0, 0.5);
+	}
+
+	/* Minecraft style parallax background using provided image */
+	/* Smoother GPU-based horizontal pan */
+	@keyframes minecraft-scroll {
+		from {
+			transform: translate3d(0, 0, 0);
+		}
+
+		to {
+			transform: translate3d(-50%, 0, 0);
+		}
+	}
+
+	.parallax-minecraft {
+		position: relative;
+		overflow: hidden;
+		isolation: isolate;
+		background-color: #000;
+	}
+
+	/* Background strip with two images side by side */
+	.minecraft-scroll-layer {
+		position: absolute;
+		inset: 0;
+		display: flex;
+		width: 200%;
+		height: 100%;
+		animation: minecraft-scroll 240s linear infinite;
+		will-change: transform;
+		filter: blur(2px) brightness(0.75);
+		transform: scale(1.05);
+		z-index: 0;
+	}
+
+	/* Each half is the same Minecraft image */
+	.minecraft-scroll-image {
+		flex: 0 0 50%;
+		height: 100%;
+		background-image: url('/sample_image_2.jpg');
+		background-repeat: repeat-x;
+		background-size: auto 100%;
+		background-position: center;
+	}
+
+	/* Dark overlay above background, below content */
+	.parallax-minecraft::after {
+		content: "";
+		position: absolute;
+		inset: 0;
+		background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.55));
+		z-index: 1;
+		pointer-events: none;
+	}
+
+	/* Foreground content on top */
+	.parallax-minecraft>.parallax-content {
+		position: relative;
+		z-index: 2;
+		animation: hero-fade-in 0.9s ease-out forwards;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.minecraft-scroll-layer {
+			animation: none;
+			transform: none;
+		}
+
+		.parallax-minecraft>.parallax-content {
+			animation: none;
+		}
+	}
+
+}
