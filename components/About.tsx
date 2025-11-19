@@ -1,3 +1,5 @@
+"use client";
+import { motion } from "motion/react";
 import { Zap, Users, Globe, Shield } from "lucide-react";
 
 export function About() {
@@ -28,6 +30,27 @@ export function About() {
 		},
 	];
 
+	// Animation variants
+	const containerVariants = {
+		hidden: {},
+		show: {
+			transition: {
+				staggerChildren: 0.1,
+				delayChildren: 0.05,
+			},
+		},
+	} as const;
+
+	const cardVariants = {
+		hidden: { opacity: 0, y: 100, scale: 0.95 },
+		show: {
+			opacity: 1,
+			y: 0,
+			scale: 1,
+			transition: { type: "spring", stiffness: 40, damping: 16 },
+		},
+	} as const;
+
 	return (
 		<section id="about" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-900">
 			<div className="max-w-7xl mx-auto">
@@ -42,13 +65,20 @@ export function About() {
 					</p>
 				</div>
 
-				<div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+				<motion.div
+					className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16"
+					variants={containerVariants}
+					initial="hidden"
+					whileInView="show"
+					viewport={{ once: true, amount: 0.2 }}
+				>
 					{features.map((feature) => {
 						const Icon = feature.icon;
 						return (
-							<div
+							<motion.div
 								key={feature.title}
-								className="minecraft-card hover:border-orange-500 transition-all transform hover:scale-105"
+								variants={cardVariants}
+								className="minecraft-card will-change-transform hover:border-orange-500 transition-colors"
 							>
 								<div className="flex items-start gap-4">
 									<div
@@ -69,10 +99,10 @@ export function About() {
 										</p>
 									</div>
 								</div>
-							</div>
+							</motion.div>
 						);
 					})}
-				</div>
+				</motion.div>
 
 				<div className="minecraft-card border-orange-500/50">
 					<h3 className="minecraft-title text-2xl mb-6 text-orange-400">

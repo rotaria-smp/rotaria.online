@@ -1,3 +1,5 @@
+"use client";
+import { motion } from "motion/react";
 type Season = {
 	id: number;
 	title: string;
@@ -42,6 +44,33 @@ const mockSeasons: Season[] = [
 	},
 ];
 
+// Animation variants
+const seasonsContainer = {
+	hidden: {},
+	show: {
+		transition: { staggerChildren: 0.18, delayChildren: 0.1 },
+	},
+} as const;
+
+const seasonCard = {
+	hidden: { opacity: 0, y: 36, scale: 0.96 },
+	show: {
+		opacity: 1,
+		y: 0,
+		scale: 1,
+		transition: { type: "spring", stiffness: 140, damping: 18 },
+	},
+} as const;
+
+const featureItem = {
+	hidden: { opacity: 0, x: -18 },
+	show: {
+		opacity: 1,
+		x: 0,
+		transition: { type: "spring", stiffness: 200, damping: 20 },
+	},
+} as const;
+
 export function Seasons() {
 	return (
 		<section
@@ -61,13 +90,20 @@ export function Seasons() {
 				</p>
 			</div>
 
-			<div className="grid gap-10 md:grid-cols-2 max-w-6xl mx-auto">
+			<motion.div
+				className="grid gap-10 md:grid-cols-2 max-w-6xl mx-auto"
+				variants={seasonsContainer}
+				initial="hidden"
+				whileInView="show"
+				viewport={{ once: true, amount: 0.25 }}
+			>
 				{mockSeasons.map((season) => {
 					const isActive = season.status === "active";
 					return (
-						<div
+						<motion.div
 							key={season.id}
-							className="minecraft-card flex flex-col gap-5 animate-[hero-fade-in_0.8s_ease-out_forwards]"
+							variants={seasonCard}
+							className="minecraft-card flex flex-col gap-5"
 						>
 							<div className="flex items-start justify-between gap-4">
 								<div>
@@ -94,17 +130,24 @@ export function Seasons() {
 								{season.description}
 							</p>
 
-							<ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+							<motion.ul
+								className="grid grid-cols-1 sm:grid-cols-2 gap-2"
+								variants={{
+									hidden: {},
+									show: { transition: { staggerChildren: 0.08 } },
+								}}
+							>
 								{season.features.map((f) => (
-									<li
+									<motion.li
 										key={f}
+										variants={featureItem}
 										className="flex items-center gap-2 text-sm font-semibold text-orange-300"
 									>
 										<span className="h-2 w-2 bg-orange-500 inline-block" />
 										{f}
-									</li>
+									</motion.li>
 								))}
-							</ul>
+							</motion.ul>
 
 							{season.cta && (
 								<div className="pt-2">
@@ -116,10 +159,10 @@ export function Seasons() {
 									</a>
 								</div>
 							)}
-						</div>
+						</motion.div>
 					);
 				})}
-			</div>
+			</motion.div>
 		</section>
 	);
 }
