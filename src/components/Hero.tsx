@@ -3,7 +3,10 @@ import PanningBackground from './ui/PanningImage';
 import { HeroImage } from './ui/HeroImage';
 
 export function Hero() {
-  const links = {};
+  const links = {
+    discord_url: '#',
+    bluemap_url: '#'
+  };
 
   return (
     <section
