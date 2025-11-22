@@ -8,7 +8,10 @@ export function Hero() {
 	};
 
 	return (
-		<section id="home" className="relative w-full py-32 overflow-hidden">
+		<section
+			id="home"
+			className="relative w-full py-32 overflow-hidden h-screen"
+		>
 			<PanningBackground />
 
 			<div className="absolute inset-0 bg-linear-to-t from-gray-900 via-gray-900/40 to-transparent z-1"></div>
