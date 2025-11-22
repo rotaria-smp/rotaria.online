@@ -11,14 +11,14 @@ export function Navigation() {
 	return (
 		<nav className="fixed top-0 left-0 right-0 z-50 bg-gray-900/95 border-b-4 border-gray-950">
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-				<div className="flex items-center justify-between h-16">
+				<div className="flex items-center justify-center h-16">
 					<div className="flex items-center">
 						<span className="text-2xl font-bold text-orange-400 minecraft-title">
 							Rotaria SMP
 						</span>
 					</div>
 
-					<div className="hidden md:block">
+					{/* <div className="hidden md:block">
 						<div className="ml-10 flex items-baseline space-x-8">
 							<a
 								href="#home"
@@ -53,9 +53,9 @@ export function Navigation() {
 								Join Discord
 							</a>
 						</div>
-					</div>
+					</div> */}
 
-					<div className="md:hidden">
+					{/* <div className="md:hidden">
 						<button
 							onClick={() => setIsOpen(!isOpen)}
 							className="text-gray-300 hover:text-white transition-colors"
@@ -63,11 +63,11 @@ export function Navigation() {
 						>
 							{isOpen ? <X size={28} /> : <Menu size={28} />}
 						</button>
-					</div>
+					</div> */}
 				</div>
 			</div>
 
-			{isOpen && (
+			{/* {isOpen && (
 				<div className="md:hidden border-t-4 border-gray-950">
 					<div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-gray-900">
 						<a
@@ -104,7 +104,7 @@ export function Navigation() {
 						</a>
 					</div>
 				</div>
-			)}
+			)} */}
 		</nav>
 	);
 }
