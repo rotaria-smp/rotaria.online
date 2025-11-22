@@ -1,17 +1,17 @@
-import { About } from "@/components/About";
+// import { About } from "@/components/About";
 import { Hero } from "@/components/Hero";
-import { Seasons } from "@/components/Seasons";
-import { Staff } from "@/components/Staff";
+// import { Seasons } from "@/components/Seasons";
+// import { Staff } from "@/components/Staff";
 
 export default function Home() {
 	return (
 		<>
 			<Hero />
-			<main>
+			{/* <main>
 				<About />
 				<Seasons />
 				<Staff />
-			</main>
+			</main> */}
 		</>
 	);
 }

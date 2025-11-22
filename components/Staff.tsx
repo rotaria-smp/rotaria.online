@@ -91,7 +91,7 @@ export async function Staff() {
 					))}
 				</div>
 
-				<div className="mt-16 text-center">
+				{/* <div className="mt-16 text-center">
 					<div className="minecraft-card inline-block">
 						<h3 className="minecraft-title text-2xl mb-3 text-orange-400">
 							Want to Help Out?
@@ -104,7 +104,7 @@ export async function Staff() {
 							Future Applications
 						</a>
 					</div>
-				</div>
+				</div> */}
 			</div>
 		</section>
 	);

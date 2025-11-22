@@ -3,8 +3,8 @@ import { PanningBackground } from "./ui/PanningImage";
 
 export function Hero() {
 	const links = {
-		discord_url: "#",
-		bluemap_url: "#",
+		discord_url: "https://discord.gg/EENxMBaAkz",
+		bluemap_url: "https://bluemap.rotaria.online/",
 	};
 
 	return (
@@ -49,7 +49,7 @@ export function Hero() {
 						</a>
 					</div>
 
-					<div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+					{/* <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
 						<div className="minecraft-card">
 							<div className="text-5xl font-bold text-orange-400 mb-3">60+</div>
 							<div className="text-xl text-gray-200 font-semibold">
@@ -72,7 +72,7 @@ export function Hero() {
 								Active Community
 							</div>
 						</div>
-					</div>
+					</div> */}
 				</div>
 			</div>
 		</section>

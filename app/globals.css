@@ -192,32 +192,28 @@
 	.minecraft-badge {
 		display: inline-block;
 		padding: 0.25rem 0.75rem;
-		/* py-1 px-3 */
 		font-size: 0.75rem;
-		/* text-xs */
 		line-height: 1rem;
 		font-weight: 700;
-		/* font-bold */
 		border-radius: 0;
-		/* rounded-none */
 		border-width: 2px;
-		/* border-2 */
 		border-style: solid;
-		/* border-solid */
 		letter-spacing: 0.05em;
-		/* tracking-wide */
 		border-color: transparent;
-		/* base will be overridden in variants */
 		box-shadow:
 			inset -2px -2px 0 rgba(0, 0, 0, 0.3),
 			inset 2px 2px 0 rgba(255, 255, 255, 0.15);
 	}
 
+	.minecraft-badge-planed {
+		background-color: #3b82f6;
+		border-color: #1e40af;
+		color: #ffffff;
+	}
+
 	.minecraft-badge-active {
 		background-color: #10b981;
-		/* emerald-500 */
 		border-color: #047857;
-		/* emerald-700 */
 		color: #ffffff;
 	}
 

@@ -8,7 +8,7 @@ export function About() {
 			icon: Zap,
 			title: "Balanced Modpack",
 			description:
-				"A curated mix of exploration, tech, magic, and QoL mods—no bloat, just fun.",
+				"A curated mix of exploration, tech, and QoL mods—no bloat, just fun.",
 		},
 		{
 			icon: Users,
@@ -104,7 +104,7 @@ export function About() {
 					})}
 				</motion.div>
 
-				<div className="minecraft-card border-orange-500/50">
+				{/* <div className="minecraft-card border-orange-500/50">
 					<h3 className="minecraft-title text-2xl mb-6 text-orange-400">
 						Server Information
 					</h3>
@@ -133,12 +133,9 @@ export function About() {
 								24 Slot Cap
 							</span>
 						</div>
-						{/* <div className="flex items-center gap-2">
-              <span className="font-bold text-orange-400 text-lg">Difficulty:</span>
-              <span className="text-gray-200 font-semibold text-lg">Survival (Tweaked)</span>
-            </div> */}
+
 					</div>
-				</div>
+				</div> */}
 			</div>
 		</section>
 	);

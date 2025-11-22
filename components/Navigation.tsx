@@ -4,7 +4,9 @@ import { useState } from "react";
 
 export function Navigation() {
 	const [isOpen, setIsOpen] = useState(false);
-	const links: { discord_url?: string } | undefined = {};
+	const links: { discord_url?: string } | undefined = {
+		discord_url: "https://discord.gg/EENxMBaAkz",
+	};
 
 	return (
 		<nav className="fixed top-0 left-0 right-0 z-50 bg-gray-900/95 border-b-4 border-gray-950">

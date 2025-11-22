@@ -1,7 +1,10 @@
-import { ExternalLink, Map as LMap, MessageCircle } from "lucide-react";
+import { Map as LMap, MessageCircle } from "lucide-react";
 
 export function Footer() {
-	const links: { discord_url?: string; bluemap_url?: string } | undefined = {};
+	const links: { discord_url?: string; bluemap_url?: string } | undefined = {
+		discord_url: "https://discord.gg/EENxMBaAkz",
+		bluemap_url: "https://bluemap.rotaria.online/",
+	};
 
 	return (
 		<footer className="bg-gray-950 border-t-4 border-gray-900 py-12 px-4 sm:px-6 lg:px-8">
@@ -11,10 +14,10 @@ export function Footer() {
 						<h3 className="minecraft-title text-xl text-orange-400 mb-4">
 							Rotaria SMP
 						</h3>
-						<p className="text-gray-300 font-semibold">
+						{/* <p className="text-gray-300 font-semibold">
 							A cooperative modded survival space—build, trade, automate,
 							explore, and help shape the next season.
-						</p>
+						</p> */}
 					</div>
 
 					<div>
@@ -88,13 +91,13 @@ export function Footer() {
 								<LMap size={20} />
 								World Map
 							</a>
-							<a
+							{/* <a
 								href="#"
 								className="flex items-center gap-2 text-gray-300 hover:text-orange-400 transition-colors font-semibold"
 							>
-								<ExternalLink size={20} />
+								<Code size={20} />
 								Wiki / Docs
-							</a>
+							</a> */}
 						</div>
 					</div>
 				</div>
