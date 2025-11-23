@@ -5,6 +5,7 @@ import "./globals.css";
 import { Footer } from "@/components/Footer";
 import { Navigation } from "@/components/Navigation";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const pixelSans = Pixelify_Sans({
 	variable: "--font-pixelify-sans",
@@ -25,6 +26,7 @@ export default function RootLayout({
 				{children}
 				<Footer />
 				<Analytics />
+				<SpeedInsights />
 			</body>
 		</html>
 	);
