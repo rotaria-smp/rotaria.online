@@ -31,7 +31,7 @@ const STAFF_BASE: StaffMemberBase[] = [
 		id: "dddbc42f7025495b8beb151200305d5d", // grizzi
 		role: "Staff",
 		icon_type: "shield",
-		description: "Welcomes new players and organizes build collabs.",
+		description: "Welcomes new players and moderates the server.",
 	},
 	{
 		id: "54641d3d4ce247419feeb88e3f8ceb53", // jag
