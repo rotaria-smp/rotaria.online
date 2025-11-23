@@ -139,7 +139,10 @@
 
 	body {
 		@apply bg-gray-900 text-gray-100;
-		font-family: "Pixelify Sans", "Arial", sans-serif;
+		font-family:
+			ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+			Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+			"Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 	}
 
 	h1,
@@ -147,8 +150,10 @@
 	h3,
 	h4,
 	h5,
-	h6 {
-		font-family: "Pixelify Sans", "Arial", sans-serif;
+	h6,
+	.pixelfy {
+		font-family:
+			var(--font-pixelify-sans), ui-sans-serif, system-ui, sans-serif;
 		font-weight: 700;
 		letter-spacing: 0.05em;
 	}

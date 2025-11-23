@@ -1,5 +1,5 @@
-import { PlayerHead } from "@/components/ui/PlayerHead";
 import { getPlayerHead } from "@/lib/minecraft";
+import { StaffAnimated } from "@/components/ui/StaffAnimated";
 
 type StaffMemberBase = {
 	id: string;
@@ -12,6 +12,12 @@ const STAFF_BASE: StaffMemberBase[] = [
 	{
 		id: "55374620bd114865a5a4e97cd18849a3", // awiant
 		role: "Owner",
+		icon_type: "crown",
+		description: "Handles vision, community tone, and long–term planning.",
+	},
+	{
+		id: "bb2a6b1a56e944adaa7703405c2e427d", // wenia
+		role: "Co owner",
 		icon_type: "crown",
 		description: "Handles vision, community tone, and long–term planning.",
 	},
@@ -31,15 +37,22 @@ const STAFF_BASE: StaffMemberBase[] = [
 		id: "54641d3d4ce247419feeb88e3f8ceb53", // jag
 		role: "Developer",
 		icon_type: "shield",
-		description: "Moderation, events, and support tickets.",
+		description: "Bot, mod and software development.",
+	},
+	{
+		id: "754c940300604297be70c84689b54c70", // Q29jYWluYQ
+		role: "Developer",
+		icon_type: "shield",
+		description: "Bot, mod and software development.",
 	},
 ];
 
+type StaffResolved = StaffMemberBase & { name: string; headUrl: string };
+
 export async function Staff() {
-	const staffWithHeads = await Promise.all(
+	const staffWithHeads: StaffResolved[] = await Promise.all(
 		STAFF_BASE.map(async (member) => {
 			const res = await getPlayerHead(member.id);
-
 			if (!res) {
 				return {
 					...member,
@@ -47,14 +60,8 @@ export async function Staff() {
 					headUrl: "/default-head.png",
 				};
 			}
-
 			const { name, playerhead: headUrl } = res;
-
-			return {
-				...member,
-				name,
-				headUrl: headUrl,
-			};
+			return { ...member, name, headUrl };
 		}),
 	);
 
@@ -66,45 +73,13 @@ export async function Staff() {
 						Our Staff Team
 					</h2>
 					<p className="text-lg text-gray-200 max-w-3xl mx-auto font-semibold">
-						These are the people keeping Rotaria SMP stable, friendly, and
-						moving forward.
+						Meet the people who help keep Rotaria SMP stable, friendly, and
+						moving forward. Besides our wonderful members.
 					</p>
 				</div>
 
-				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-					{staffWithHeads.map((member) => (
-						<div
-							key={member.id}
-							className="minecraft-card text-center hover:border-orange-500 transition-all"
-						>
-							<div className="flex justify-center mb-4">
-								<PlayerHead name={member.name} url={member.headUrl} size={64} />
-							</div>
-							<h3 className="minecraft-title text-xl mb-2 text-white">
-								{member.name}
-							</h3>
-							<p className="text-orange-400 font-bold mb-2">{member.role}</p>
-							<p className="text-sm text-gray-300 font-semibold">
-								{member.description}
-							</p>
-						</div>
-					))}
-				</div>
-
-				{/* <div className="mt-16 text-center">
-					<div className="minecraft-card inline-block">
-						<h3 className="minecraft-title text-2xl mb-3 text-orange-400">
-							Want to Help Out?
-						</h3>
-						<p className="text-gray-200 mb-6 max-w-2xl font-semibold">
-							We occasionally open helper. If you like organizing, fixing, or
-							welcoming newcomers, keep an eye out.
-						</p>
-						<a href="#" className="minecraft-button-primary">
-							Future Applications
-						</a>
-					</div>
-				</div> */}
+				{/* Animated client-side list */}
+				<StaffAnimated staff={staffWithHeads} />
 			</div>
 		</section>
 	);

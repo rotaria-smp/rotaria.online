@@ -8,10 +8,7 @@ export function Hero() {
 	};
 
 	return (
-		<section
-			id="home"
-			className="relative w-full py-32 overflow-hidden h-screen"
-		>
+		<section id="home" className="relative w-full py-32 overflow-hidden">
 			<PanningBackground />
 
 			<div className="absolute inset-0 bg-linear-to-t from-gray-900 via-gray-900/40 to-transparent z-1"></div>
@@ -23,7 +20,7 @@ export function Hero() {
 					</h1>
 
 					<p
-						className="text-lg sm:text-xl md:text-2xl text-white mb-12 max-w-3xl mx-auto font-semibold"
+						className="text-lg sm:text-xl md:text-2xl text-white mb-12 max-w-3xl mx-auto font-semibold pixelfy"
 						style={{ textShadow: "2px 2px 4px rgba(0,0,0,0.8)" }}
 					>
 						A relaxed, modded survival world where tech, farms. Claim a spot,

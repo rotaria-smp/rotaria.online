@@ -59,13 +59,13 @@ export function About() {
 						About Rotaria SMP
 					</h2>
 					<p className="text-lg text-gray-200 max-w-3xl mx-auto font-semibold">
-						Rotaria SMP is a community-driven modded survival server. We focus
-						on collaborative play, seasonal progression, and keeping things
-						approachable for casual and veteran players alike.
+						Rotaria SMP is a community-driven modded crate server with over 200
+						mods. We focus on collaborative play, seasonal progression, and
+						keeping things approachable for casual and veteran players alike.
 					</p>
 				</div>
 
-				<motion.div
+				{/* <motion.div
 					className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16"
 					variants={containerVariants}
 					initial="hidden"
@@ -102,7 +102,7 @@ export function About() {
 							</motion.div>
 						);
 					})}
-				</motion.div>
+				</motion.div> */}
 
 				{/* <div className="minecraft-card border-orange-500/50">
 					<h3 className="minecraft-title text-2xl mb-6 text-orange-400">

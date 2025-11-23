@@ -1,5 +1,5 @@
 import { Map as LMap, MessageCircle } from "lucide-react";
-
+import Link from "next/link";
 export function Footer() {
 	const links: { discord_url?: string; bluemap_url?: string } | undefined = {
 		discord_url: "https://discord.gg/EENxMBaAkz",
@@ -14,10 +14,10 @@ export function Footer() {
 						<h3 className="minecraft-title text-xl text-orange-400 mb-4">
 							Rotaria SMP
 						</h3>
-						{/* <p className="text-gray-300 font-semibold">
-							A cooperative modded survival space—build, trade, automate,
-							explore, and help shape the next season.
-						</p> */}
+						<p className="text-gray-300 font-semibold">
+							A cooperative modded crate server, trade, automate, explore, and
+							help shape the next season.
+						</p>
 					</div>
 
 					<div>
@@ -27,26 +27,10 @@ export function Footer() {
 						<ul className="space-y-2">
 							<li>
 								<a
-									href="#home"
-									className="text-gray-300 hover:text-orange-400 transition-colors font-semibold"
-								>
-									Home
-								</a>
-							</li>
-							<li>
-								<a
 									href="#about"
 									className="text-gray-300 hover:text-orange-400 transition-colors font-semibold"
 								>
 									About
-								</a>
-							</li>
-							<li>
-								<a
-									href="#seasons"
-									className="text-gray-300 hover:text-orange-400 transition-colors font-semibold"
-								>
-									Seasons
 								</a>
 							</li>
 							<li>
@@ -58,12 +42,12 @@ export function Footer() {
 								</a>
 							</li>
 							<li>
-								<a
-									href="#"
+								<Link
+									href="/rules"
 									className="text-gray-300 hover:text-orange-400 transition-colors font-semibold"
 								>
 									Rules
-								</a>
+								</Link>
 							</li>
 						</ul>
 					</div>
