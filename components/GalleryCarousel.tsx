@@ -22,26 +22,27 @@ const SLIDES: Slide[] = [
 	{
 		id: 4,
 		src: "/gallery_images/2025-11-18_02.36.55.png",
-		alt: "Spawn overview",
+		alt: "Minecraft player fishing at the harbor",
 		credit: "Atef",
 	},
 	{
 		id: 2,
 		src: "/gallery_images/2025-09-04_19.32.20.png",
-		alt: "Community builds",
+		alt: "Minecraft train built with the mod crate",
 		credit: "Komputer",
 	},
 	{
 		id: 3,
 		src: "/gallery_images/2025-09-21_19.54.26.png",
-		alt: "Automation setup",
+		alt: "A minecraft build over a wedding vennue with cherry blossom style",
 		credit: "Rotaria player",
 	},
 	{
 		id: 5,
 		src: "/gallery_images/image.png",
 		alt: "End island hub",
-		credit: "Komputer",
+		credit:
+			"A minecraft train service station including a train built with the crate mod",
 	},
 ];
 
@@ -58,6 +59,7 @@ export function GalleryCarousel() {
 		api.on("select", onSelect);
 		onSelect();
 		return () => {
+			api?.off("reInit", onSelect);
 			api?.off("select", onSelect);
 		};
 	}, [api]);
@@ -94,7 +96,10 @@ export function GalleryCarousel() {
 				>
 					<CarouselContent className="h-[420px] rounded-lg relative">
 						{SLIDES.map((slide, i) => (
-							<CarouselItem key={slide.src} className="relative h-full">
+							<CarouselItem
+								key={`item_${slide.id}`}
+								className="relative h-full"
+							>
 								<div
 									className={`absolute inset-0 transition-opacity duration-700 ${
 										i === index ? "opacity-100" : "opacity-0"
@@ -109,7 +114,7 @@ export function GalleryCarousel() {
 										sizes="(max-width: 1280px) 100vw, 1280px"
 										className="object-cover"
 									/>
-									<div className="absolute inset-0 rounded-lg bg-linear-to-t from-black/70 via-black/25 to-transparent pointer-events-none" />
+									<div className="absolute inset-0 rounded-lg bg-gradient-to-t from-black/70 via-black/25 to-transparent pointer-events-none" />
 									{slide.credit && (
 										<div className="absolute bottom-12 left-12">
 											<div className="minecraft-card bg-black/55 backdrop-blur-sm border-orange-600/40 px-4 py-2">
