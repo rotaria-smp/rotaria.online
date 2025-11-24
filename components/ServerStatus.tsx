@@ -77,7 +77,7 @@ export async function ServerStatus() {
 
 			{!isOnline && (
 				<p className="text-xs text-gray-400 font-semibold">
-					Status API unreachable or server offline.
+					Server seems to be offline at the moment.
 				</p>
 			)}
 		</div>
