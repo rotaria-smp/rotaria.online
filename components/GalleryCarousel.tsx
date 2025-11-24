@@ -40,9 +40,8 @@ const SLIDES: Slide[] = [
 	{
 		id: 5,
 		src: "/gallery_images/image.png",
-		alt: "End island hub",
-		credit:
-			"A minecraft train service station including a train built with the crate mod",
+		alt: "A minecraft train service station including a train built with the crate mode",
+		credit: "Komputer",
 	},
 ];
 
