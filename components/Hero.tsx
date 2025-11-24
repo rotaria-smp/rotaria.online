@@ -1,6 +1,5 @@
 import { ExternalLink, Map as LMap } from "lucide-react";
 import { PanningBackground } from "./ui/PanningImage";
-
 export function Hero() {
 	const links = {
 		discord_url: "https://discord.gg/EENxMBaAkz",

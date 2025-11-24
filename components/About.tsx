@@ -52,7 +52,7 @@ export function About() {
 	} as const;
 
 	return (
-		<section id="about" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-900">
+		<section id="about" className="py-12 px-4 sm:px-6 lg:px-8 bg-gray-900">
 			<div className="max-w-7xl mx-auto">
 				<div className="text-center mb-16">
 					<h2 className="minecraft-title text-4xl sm:text-5xl mb-4 text-orange-400">
