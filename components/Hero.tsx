@@ -19,7 +19,7 @@ export function Hero() {
 	return (
 		<section
 			id="home"
-			className="relative w-full py-32 overflow-hidden min-h-screen"
+			className="relative w-full py-32 overflow-hidden" // min-h-screen
 		>
 			<CubemapPanorama
 				faces={cubemapFaces}
@@ -31,7 +31,7 @@ export function Hero() {
 
 			<div className="parallax-content relative z-10 flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20 h-full">
 				<div className="text-center max-w-4xl mx-auto">
-					<h1 className="minecraft-title text-5xl sm:text-6xl md:text-7xl mb-8 text-white">
+					<h1 className="minecraft-title text-5xl sm:text-6xl md:text-7xl mb-8 text-orange-400">
 						Rotaria SMP
 					</h1>
 
