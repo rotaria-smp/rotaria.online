@@ -1,39 +1,29 @@
+"use client";
+import { motion } from "motion/react";
 import { Wifi, AlertTriangle, Users } from "lucide-react";
+import type { McStatusResponse } from "@/lib/minecraft";
 
-type McStatusResponse = {
-	online: boolean;
-	players?: {
-		online?: number;
-		max?: number;
-	};
-};
+const cardVariants = {
+	hidden: { opacity: 0, y: 32, scale: 0.94 },
+	show: {
+		opacity: 1,
+		y: 0,
+		scale: 1,
+		transition: { type: "spring", stiffness: 140, damping: 18 },
+	},
+} as const;
 
-async function fetchStatus(): Promise<McStatusResponse> {
-	try {
-		const res = await fetch(
-			"https://api.mcstatus.io/v2/status/java/mc.rotaria.online",
-			{
-				// Revalidate every 60s
-				next: { revalidate: 60 },
-			},
-		);
-		if (!res.ok) {
-			return { online: false };
-		}
-		return (await res.json()) as McStatusResponse;
-	} catch {
-		return { online: false };
-	}
-}
-
-export async function ServerStatus() {
-	const data = await fetchStatus();
-	const isOnline = data.online;
+export function ServerStatus({ data }: { data: McStatusResponse }) {
+	const isOnline = data?.online;
 	const onlinePlayers = data.players?.online ?? 0;
 	const maxPlayers = data.players?.max ?? 0;
 
 	return (
-		<div
+		<motion.div
+			variants={cardVariants}
+			initial="hidden"
+			whileInView="show"
+			viewport={{ once: true, amount: 0.25 }}
 			className={`minecraft-card flex flex-col gap-4 ${isOnline ? "border-orange-500/60" : "border-red-700/60"}`}
 		>
 			<div className="flex items-center justify-between">
@@ -41,7 +31,7 @@ export async function ServerStatus() {
 					Server Status
 				</h3>
 				{isOnline ? (
-					<span className="minecraft-badge minecraft-badge-active flex items-center gap-1">
+					<span className="minecraft-badge minecraft-badge-active flex items-center gap-1 animate-pulse">
 						<Wifi size={16} /> Online
 					</span>
 				) : (
@@ -60,10 +50,12 @@ export async function ServerStatus() {
 						<Users size={16} className="text-orange-400" />
 						{isOnline ? (
 							<span>
-								{onlinePlayers}/{maxPlayers || "?"}
+								{onlinePlayers}
+								{" / "}
+								{maxPlayers || "?"}
 							</span>
 						) : (
-							<span>0/0</span>
+							<span>0 / 0</span>
 						)}
 					</div>
 				</div>
@@ -71,7 +63,11 @@ export async function ServerStatus() {
 					<span className="text-xs font-bold uppercase tracking-wide text-gray-400">
 						Address
 					</span>
-					<span className="text-gray-200 font-semibold">mc.rotaria.online</span>
+					<span className="text-gray-200 font-semibold">
+						<code className="px-1 py-0.5 rounded bg-gray-700 text-white font-mono text-sm">
+							mc.rotaria.online
+						</code>
+					</span>
 				</div>
 			</div>
 
@@ -80,6 +76,6 @@ export async function ServerStatus() {
 					Server seems to be offline at the moment.
 				</p>
 			)}
-		</div>
+		</motion.div>
 	);
 }

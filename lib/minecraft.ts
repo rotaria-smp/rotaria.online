@@ -38,3 +38,29 @@ export async function getPlayerHead(
 
 	return null;
 }
+
+export type McStatusResponse = {
+	online: boolean;
+	players?: {
+		online?: number;
+		max?: number;
+	};
+};
+
+export async function fetchStatus(): Promise<McStatusResponse> {
+	try {
+		const res = await fetch(
+			"https://api.mcstatus.io/v2/status/java/mc.rotaria.online",
+			{
+				// Revalidate every 60s
+				next: { revalidate: 60 },
+			},
+		);
+		if (!res.ok) {
+			return { online: false };
+		}
+		return (await res.json()) as McStatusResponse;
+	} catch {
+		return { online: false };
+	}
+}
