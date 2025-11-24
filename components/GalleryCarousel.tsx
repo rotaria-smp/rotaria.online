@@ -26,6 +26,12 @@ const SLIDES: Slide[] = [
 		credit: "W_Grizzified",
 	},
 	{
+		id: 6,
+		src: "/gallery_images/Screenshot_2025-10-30_135350_oan.png",
+		alt: "End island hub",
+		credit: "Oan",
+	},
+	{
 		id: 2,
 		src: "/gallery_images/2025-09-04_19.32.20-Komputer.png",
 		alt: "Community builds",
@@ -33,23 +39,17 @@ const SLIDES: Slide[] = [
 	},
 	{
 		id: 3,
-		src: "/gallery_images/2025-09-21_19.54.26-Demozo.png",
+		src: "/gallery_images/2025-09-21_19.54.26.png",
 		alt: "Automation setup",
-		credit: "Demozo",
+		credit: "Rotaria player",
 	},
-	// { id: 4, src: "/gallery_images/2025-11-18_02.36.55-Atef.png", alt: "End island hub", credit: "Atef" },
 	{
 		id: 5,
 		src: "/gallery_images/Komputer.png",
 		alt: "End island hub",
 		credit: "Komputer",
 	},
-	{
-		id: 6,
-		src: "/gallery_images/Screenshot_2025-10-30_135350_oan.png",
-		alt: "End island hub",
-		credit: "Oan",
-	},
+
 	{
 		id: 7,
 		src: "/gallery_images/Screenshot_2025-10-31_164936_oan.png",
@@ -102,7 +102,7 @@ export function GalleryCarousel() {
 
 				<Carousel
 					setApi={setApi}
-					className="relative group max-w-5xl mx-auto"
+					className="group max-w-5xl mx-auto"
 					opts={{ loop: true, align: "start" }}
 				>
 					<CarouselContent className="h-[420px] rounded-lg relative">
@@ -139,9 +139,8 @@ export function GalleryCarousel() {
 						))}
 					</CarouselContent>
 
-					{/* Prev / Next (appear on hover) */}
-					<CarouselPrevious className="opacity-0 group-hover:opacity-100 transition-opacity bg-orange-600 text-white border-orange-700 hover:bg-orange-500" />
-					<CarouselNext className="opacity-0 group-hover:opacity-100 transition-opacity bg-orange-600 text-white border-orange-700 hover:bg-orange-500" />
+					{/* <CarouselPrevious className="opacity-0 group-hover:opacity-100 transition-opacity bg-orange-600 text-white border-orange-700 hover:bg-orange-500" />
+					<CarouselNext className="opacity-0 group-hover:opacity-100 transition-opacity bg-orange-600 text-white border-orange-700 hover:bg-orange-500" /> */}
 
 					{/* Play / Pause */}
 					<button
@@ -151,16 +150,13 @@ export function GalleryCarousel() {
 						className="absolute bottom-8 right-8 minecraft-button-primary px-3 py-2 flex items-center gap-2"
 					>
 						{playing ? <Pause size={16} /> : <Play size={16} />}
-						{/* <span className="text-xs font-bold uppercase">
-              {playing ? "Pause" : "Play"}
-            </span> */}
 					</button>
 
 					{/* Indicators */}
 					<div className="absolute bottom-4 left-4 flex gap-2">
 						{SLIDES.map((slide, i) => (
 							<button
-								key={"dot_" + slide.id}
+								key={`dot_${slide.id}`}
 								type="button"
 								aria-label={`Go to slide ${i + 1}`}
 								onClick={() => api?.scrollTo(i)}
