@@ -41,11 +41,13 @@ export function PanningBackground({
 }) {
 	const [webglReady, setWebglReady] = useState(false);
 	const isWebGlEnabled = useMemo(() => isWebGLReallyEnabled(), []);
+	useEffect(() => {
+		setWebglReady(() => isWebGLReallyEnabled());
+	}, []);
 
-	// TODO : fixa hydrationerror
-	if (!isWebGlEnabled) {
+	if (!webglReady) {
 		return (
-			<div className="minecraft-scroll-layer" suppressHydrationWarning>
+			<div className="minecraft-scroll-layer">
 				<div className="minecraft-scroll-image" />
 				<div className="minecraft-scroll-image" />
 				<div className="minecraft-scroll-image" />
@@ -56,7 +58,6 @@ export function PanningBackground({
 	// Webgl based with fallback image
 	return (
 		<div
-			suppressHydrationWarning
 			style={{
 				position: "fixed",
 				inset: 0,
