@@ -21,7 +21,7 @@ type Slide = {
 const SLIDES: Slide[] = [
 	{
 		id: 1,
-		src: "/gallery_images/2025-08-28_05.05.32_grizzi.png",
+		src: "/gallery_images/2025-08-28_05.05.32.png",
 		alt: "Spawn overview",
 		credit: "W_Grizzified",
 	},
@@ -33,13 +33,13 @@ const SLIDES: Slide[] = [
 	},
 	{
 		id: 6,
-		src: "/gallery_images/Screenshot_2025-10-30_135350_oan.png",
+		src: "/gallery_images/Screenshot_2025-10-30_135350.png",
 		alt: "End island hub",
 		credit: "Oan",
 	},
 	{
 		id: 2,
-		src: "/gallery_images/2025-09-04_19.32.20-Komputer.png",
+		src: "/gallery_images/2025-09-04_19.32.20.png",
 		alt: "Community builds",
 		credit: "Komputer",
 	},
@@ -51,14 +51,14 @@ const SLIDES: Slide[] = [
 	},
 	{
 		id: 5,
-		src: "/gallery_images/Komputer.png",
+		src: "/gallery_images/image.png",
 		alt: "End island hub",
 		credit: "Komputer",
 	},
 
 	{
 		id: 7,
-		src: "/gallery_images/Screenshot_2025-10-31_164936_oan.png",
+		src: "/gallery_images/Screenshot_2025-10-31_164936.png",
 		alt: "End island hub",
 		credit: "Oan",
 	},
