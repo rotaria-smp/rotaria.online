@@ -120,7 +120,7 @@ export function GalleryCarousel() {
 										fill
 										priority={i === index}
 										sizes="(max-width: 1280px) 100vw, 1280px"
-										className="object-cover rounded-lg"
+										className="object-cover"
 									/>
 									<div className="absolute inset-0 rounded-lg bg-linear-to-t from-black/70 via-black/25 to-transparent pointer-events-none" />
 									{slide.credit && (
