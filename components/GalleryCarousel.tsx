@@ -26,6 +26,12 @@ const SLIDES: Slide[] = [
 		credit: "W_Grizzified",
 	},
 	{
+		id: 4,
+		src: "/gallery_images/2025-11-18_02.36.55.png",
+		alt: "Spawn overview",
+		credit: "Atef",
+	},
+	{
 		id: 6,
 		src: "/gallery_images/Screenshot_2025-10-30_135350_oan.png",
 		alt: "End island hub",
@@ -139,6 +145,7 @@ export function GalleryCarousel() {
 						))}
 					</CarouselContent>
 
+					{/* TODO : these needs to be fixed */}
 					{/* <CarouselPrevious className="opacity-0 group-hover:opacity-100 transition-opacity bg-orange-600 text-white border-orange-700 hover:bg-orange-500" />
 					<CarouselNext className="opacity-0 group-hover:opacity-100 transition-opacity bg-orange-600 text-white border-orange-700 hover:bg-orange-500" /> */}
 
