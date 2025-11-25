@@ -13,30 +13,37 @@ type MojangResponse = {
 	name: string;
 };
 
+export async function getPlayer(uuid: string): Promise<MojangResponse | null> {
+	try {
+		const res = await fetch(
+			`https://api.minecraftservices.com/minecraft/profile/lookup/${encodeURIComponent(uuid)}`,
+			{ next: { revalidate: 3600 } },
+		);
+		if (!res.ok) {
+			console.warn(
+				`[getPlayer] Non-OK response: ${res.status} ${res.statusText}`,
+			);
+			return null;
+		}
+		const data = (await res.json()) as MojangResponse;
+		return data ?? null;
+	} catch (error) {
+		console.log("Could not get player", error);
+		return null;
+	}
+}
+
 export async function getPlayerHead(
 	id: string,
 ): Promise<ResponseProfile | null> {
-	try {
-		const res = await fetch(
-			`https://api.minecraftservices.com/minecraft/profile/lookup/${encodeURIComponent(
-				id,
-			)}`,
-			{ next: { revalidate: 3600 } },
-		);
-
-		if (res.ok) {
-			const data = (await res.json()) as MojangResponse;
-			return {
-				name: data.name,
-				playerhead: `https://mc-heads.net/avatar/${id}.png`,
-			};
-		}
-	} catch (error) {
-		// ignore fetch errors
-		console.log("Could not fetch playerhead", error);
+	const data = await getPlayer(id);
+	if (!data) {
+		return null;
 	}
-
-	return null;
+	return {
+		name: data.name,
+		playerhead: `https://mc-heads.net/avatar/${id}.png`,
+	};
 }
 
 export type McStatusResponse = {
