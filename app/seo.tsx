@@ -7,20 +7,21 @@ export const SEO: Metadata = {
 		template: "%s | Rotaria SMP",
 	},
 	description:
-		"Rotaria SMP is a relaxed, cooperative Create-focused modded Minecraft survival community with 200+ carefully curated mods. EU-hosted for low latency yet home to players worldwide, featuring seasonal progression, community megaprojects, balanced tech & magic, and fair play.",
+		"Rotaria SMP is a relaxed, cooperative Create-focused modded Minecraft survival community with 200+ curated mods, welcoming players new to modded Minecraft and seasoned veterans alike. EU-hosted for low latency, featuring seasonal progression, community megaprojects, automation, balanced progression, and fair play.",
 	keywords: [
 		"Rotaria SMP",
 		"modded minecraft server",
 		"create mod server",
 		"create modded survival",
+		"new to modded minecraft",
+		"minecraft automation",
 		"200 mods minecraft",
 		"eu minecraft server",
-		"low latency minecraft",
+		"veteran minecraft player",
 		"global minecraft community",
 		"seasonal minecraft server",
 		"neo forge server",
 		"modded smp",
-		"minecraft automation",
 	],
 	authors: [{ name: "Rotaria Staff" }],
 	creator: "Rotaria Staff",
@@ -32,7 +33,7 @@ export const SEO: Metadata = {
 		siteName: "Rotaria SMP",
 		title: "Rotaria SMP – Create Mod + 200+ Mods EU Community",
 		description:
-			"Create-centered modded Minecraft SMP with 200+ curated mods, EU hosting, global players, seasonal worlds, automation & community builds.",
+			"Create-centered modded Minecraft SMP (200+ curated mods). Welcoming newcomers to modded and veteran automation builders. Seasonal worlds, EU hosting, community builds.",
 		images: [
 			{
 				url: "/seo/og_banner.png",
@@ -46,7 +47,7 @@ export const SEO: Metadata = {
 		card: "summary_large_image",
 		title: "Rotaria SMP – Create Mod + 200+ Mods EU Community",
 		description:
-			"Create-focused 200+ mod curated EU survival SMP with seasonal resets and global players.",
+			"Create-focused 200+ mod EU survival SMP welcoming new modded players and veterans alike.",
 		images: ["/seo/og_banner.png"],
 	},
 	icons: {
