@@ -35,14 +35,16 @@ export async function About() {
 	return (
 		<section id="about" className="py-12 px-4 sm:px-6 lg:px-8 bg-gray-900">
 			<div className="max-w-7xl mx-auto">
-				<div className="text-center mb-16">
+				<div className="text-center mb-14">
 					<h2 className="minecraft-title text-4xl sm:text-5xl mb-4 text-orange-400">
 						About Rotaria SMP
 					</h2>
 					<p className="text-lg text-gray-200 max-w-3xl mx-auto font-semibold">
-						Rotaria SMP is a community-driven modded crate server with over 200
-						mods. We focus on collaborative play, seasonal progression, and
-						keeping things approachable for casual and veteran players alike.
+						Rotaria SMP is a community-driven Create–focused modded survival
+						server (200+ curated mods) with seasonal progression, automation
+						megaprojects, balanced progression systems, and fair play—built to
+						be accessible to newcomers to modded Minecraft while still deep
+						enough for veteran players.
 					</p>
 				</div>
 				<div className="max-w-2xl mx-auto">
