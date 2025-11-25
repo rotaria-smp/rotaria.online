@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const SEO: Metadata = {
 	metadataBase: new URL("https://www.rotaria.online/"),
 	title: {
-		default: "Rotaria SMP – Create Mod + 200+ Mods EU Community",
+		default: "Rotaria SMP – Create Modpack + 200+ Mods EU Community",
 		template: "%s | Rotaria SMP",
 	},
 	description:
