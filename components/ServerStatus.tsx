@@ -24,7 +24,7 @@ export function ServerStatus({ data }: { data: McStatusResponse }) {
 			initial="hidden"
 			whileInView="show"
 			viewport={{ once: true, amount: 0.25 }}
-			className={`minecraft-card flex flex-col gap-4 ${isOnline ? "border-orange-500/60" : "border-red-700/60"}`}
+			className={`minecraft-card flex flex-col gap-2 md:gap-4 ${isOnline ? "border-orange-500/60" : "border-red-700/60"}`}
 		>
 			<div className="flex items-center justify-between">
 				<h3 className="minecraft-title text-xl text-white m-0">
@@ -41,7 +41,7 @@ export function ServerStatus({ data }: { data: McStatusResponse }) {
 				)}
 			</div>
 
-			<div className="grid grid-cols-2 gap-4">
+			<div className="grid grid-cols-2 gap-px md:gap-4">
 				<div className="flex flex-col">
 					<span className="text-xs font-bold uppercase tracking-wide text-gray-400">
 						Players
@@ -64,7 +64,7 @@ export function ServerStatus({ data }: { data: McStatusResponse }) {
 						Address
 					</span>
 					<span className="text-gray-200 font-semibold">
-						<code className="px-1 py-0.5 rounded bg-gray-700 text-white font-mono text-sm">
+						<code className="px-0.5 md:px-1 py-0.5 rounded bg-gray-700 text-white font-mono text-sm">
 							mc.rotaria.online
 						</code>
 					</span>

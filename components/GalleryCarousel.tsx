@@ -30,10 +30,10 @@ const cardVariants = {
 
 const SLIDES: Slide[] = [
 	{
-		id: 4,
-		src: "/gallery_images/2025-11-18_02.36.55.png",
-		alt: "Minecraft player fishing at the harbor",
-		credit: "Atef",
+		id: 1,
+		src: "/gallery_images/2025-08-28_05.05.32.png",
+		alt: "Minecraft player sitting on a couch in a minecraft shop",
+		credit: "W_Grizzified",
 	},
 	{
 		id: 2,
@@ -43,15 +43,34 @@ const SLIDES: Slide[] = [
 	},
 	{
 		id: 3,
+		src: "/gallery_images/2025-11-18_02.36.55.png",
+		alt: "Minecraft player fishing at the harbor",
+		credit: "Atef",
+	},
+	{
+		id: 4,
+		src: "/gallery_images/image.png",
+		alt: "A minecraft train service station including a train built with the crate mode",
+		credit: "Komputer",
+	},
+	{
+		id: 5,
+		src: "/gallery_images/Screenshot_2025-10-30_135350.png",
+		alt: "A build over large mushrooms in Minecraft",
+		credit: "Oan",
+	},
+	{
+		id: 6,
 		src: "/gallery_images/2025-09-21_19.54.26.png",
 		alt: "A minecraft build over a wedding vennue with cherry blossom style",
 		credit: "Rotaria player",
 	},
+
 	{
-		id: 5,
-		src: "/gallery_images/image.png",
-		alt: "A minecraft train service station including a train built with the crate mode",
-		credit: "Komputer",
+		id: 7,
+		src: "/gallery_images/Screenshot_2025-10-31_164936.png",
+		alt: "Minecraft player standing in front of an enchantment table",
+		credit: "Oan",
 	},
 ];
 
@@ -86,7 +105,7 @@ export function GalleryCarousel() {
 	}, [api, playing]);
 
 	return (
-		<section id="gallery" className="py-12 px-4 sm:px-6 lg:px-8 bg-gray-900">
+		<section id="gallery" className="py-12 bg-gray-900">
 			<div className="max-w-7xl mx-auto">
 				<div className="text-center mb-12">
 					<h2 className="minecraft-title text-4xl sm:text-5xl mb-4 text-orange-400">
@@ -128,9 +147,9 @@ export function GalleryCarousel() {
 											sizes="(max-width: 1280px) 100vw, 1280px"
 											className="object-cover"
 										/>
-										<div className="absolute inset-0 rounded-lg bg-gradient-to-t from-black/70 via-black/25 to-transparent pointer-events-none" />
+										<div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/25 to-transparent pointer-events-none" />
 										{slide.credit && (
-											<div className="absolute bottom-12 left-12">
+											<div className="absolute bottom-0 md:bottom-12 md:left-12">
 												<div className="minecraft-card bg-black/55 backdrop-blur-sm border-orange-600/40 px-4 py-2">
 													<p className="text-xs font-semibold text-gray-200 tracking-wide">
 														<span className="text-orange-300">
@@ -154,13 +173,13 @@ export function GalleryCarousel() {
 							type="button"
 							onClick={() => setPlaying((p) => !p)}
 							aria-label={playing ? "Pause autoplay" : "Play autoplay"}
-							className="absolute bottom-8 right-8 minecraft-button-primary px-3 py-2 flex items-center gap-2"
+							className="absolute bottom-0 right-0 md:bottom-8 md:right-8 minecraft-button-primary px-3 py-2 flex items-center gap-2"
 						>
 							{playing ? <Pause size={16} /> : <Play size={16} />}
 						</button>
 
 						{/* Indicators */}
-						<div className="absolute bottom-4 left-4 flex gap-2">
+						<div className="absolute left-4 top-4 flex gap-2">
 							{SLIDES.map((slide, i) => (
 								<button
 									key={`dot_${slide.id}`}
