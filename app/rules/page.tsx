@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
 	title: "Server Rules",
 	description: "Rotaria SMP server and chat rules",
-	alternates: { canonical: "https://rotaria.online/rules" },
+	alternates: { canonical: "https://www.rotaria.online/rules" },
 };
 
 export default function RulesPage() {

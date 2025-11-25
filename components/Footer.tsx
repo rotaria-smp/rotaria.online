@@ -15,8 +15,9 @@ export function Footer() {
 							Rotaria SMP
 						</h3>
 						<p className="text-gray-300 font-semibold">
-							A cooperative modded crate server, trade, automate, explore, and
-							help shape the next season.
+							A cooperative Create-focused modded server—trade, automate,
+							explore, and help shape the next season. Welcoming players new to
+							modded Minecraft and long-time veterans.
 						</p>
 					</div>
 

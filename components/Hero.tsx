@@ -39,9 +39,9 @@ export function Hero() {
 						className="text-lg sm:text-xl md:text-2xl text-white mb-12 max-w-3xl mx-auto font-semibold pixelfy"
 						style={{ textShadow: "2px 2px 4px rgba(0,0,0,0.8)" }}
 					>
-						A relaxed, modded survival world where tech, farms. Claim a spot,
-						build weird contraptions, trade with neighbors, and help shape each
-						season.
+						A relaxed Create-centered modded survival world—welcoming players
+						new to the mod scene and seasoned veterans. Automate, build
+						infrastructure, trade, and shape each season.
 					</p>
 
 					<div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
