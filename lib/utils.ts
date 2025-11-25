@@ -31,7 +31,7 @@ function getDateKey(date = new Date()) {
 	return `${yyyy}-${mm}-${dd}`;
 }
 
-function hashString(str) {
+function hashString(str: string) {
 	let hash = 0;
 	for (let i = 0; i < str.length; i++) {
 		hash = (hash * 31 + str.charCodeAt(i)) | 0;
@@ -39,7 +39,7 @@ function hashString(str) {
 	return Math.abs(hash) || 1;
 }
 
-export function mulberry32(seed) {
+export function mulberry32(seed: number) {
 	return () => {
 		// biome-ignore lint/suspicious/noAssignInExpressions: taken "as is"
 		let t = (seed += 0x6d2b79f5);
@@ -49,7 +49,11 @@ export function mulberry32(seed) {
 	};
 }
 
-export function getDailyRandomItems(arr, count, date = new Date()) {
+export function getDailyRandomItems(
+	arr: any[],
+	count: number,
+	date = new Date(),
+) {
 	if (!Array.isArray(arr) || arr.length === 0) return [];
 
 	const key = getDateKey(date);

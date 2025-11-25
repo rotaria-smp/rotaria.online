@@ -2,15 +2,9 @@ import { Hero } from "@/components/Hero";
 import { About } from "@/components/About";
 import { Staff } from "@/components/Staff";
 import { GalleryCarousel } from "@/components/GalleryCarousel";
-
+import type { Slide } from "@/types/types";
 import { getDailyRandomItems } from "@/lib/utils";
 
-type Slide = {
-	id: number;
-	src: string;
-	alt: string;
-	credit?: string;
-};
 const SLIDES: Slide[] = [
 	{
 		id: 1,

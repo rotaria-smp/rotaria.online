@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { Pause, Play } from "lucide-react";
+import type { Slide } from "@/types/types";
 import {
 	Carousel,
 	CarouselContent,
