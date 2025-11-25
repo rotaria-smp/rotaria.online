@@ -24,14 +24,14 @@ export function isWebGLReallyEnabled(): boolean {
 }
 
 /* Randomness */
-function getDateKey(date = new Date()) {
-	const yyyy = date.getFullYear();
-	const mm = String(date.getMonth() + 1).padStart(2, "0");
-	const dd = String(date.getDate()).padStart(2, "0");
+export function getDateKey(date: Date = new Date()): string {
+	const yyyy = date.getUTCFullYear();
+	const mm = String(date.getUTCMonth() + 1).padStart(2, "0");
+	const dd = String(date.getUTCDate()).padStart(2, "0");
 	return `${yyyy}-${mm}-${dd}`;
 }
 
-function hashString(str: string) {
+export function hashString(str: string): number {
 	let hash = 0;
 	for (let i = 0; i < str.length; i++) {
 		hash = (hash * 31 + str.charCodeAt(i)) | 0;
@@ -39,7 +39,7 @@ function hashString(str: string) {
 	return Math.abs(hash) || 1;
 }
 
-export function mulberry32(seed: number) {
+export function mulberry32(seed: number): () => number {
 	return () => {
 		// biome-ignore lint/suspicious/noAssignInExpressions: taken "as is"
 		let t = (seed += 0x6d2b79f5);
@@ -49,13 +49,12 @@ export function mulberry32(seed: number) {
 	};
 }
 
-export function getDailyRandomItems(
-	arr: any[],
+export function getDailyRandomItems<T>(
+	arr: T[],
 	count: number,
-	date = new Date(),
-) {
+	date: Date = new Date(),
+): T[] {
 	if (!Array.isArray(arr) || arr.length === 0) return [];
-
 	const key = getDateKey(date);
 	const seed = hashString(key);
 	const rng = mulberry32(seed);
@@ -66,5 +65,6 @@ export function getDailyRandomItems(
 		[copy[i], copy[j]] = [copy[j], copy[i]];
 	}
 
-	return copy.slice(0, Math.min(count, copy.length));
+	const safeCount = Math.max(0, Math.min(count, copy.length));
+	return copy.slice(0, safeCount);
 }

@@ -13,17 +13,20 @@ type MojangResponse = {
 	name: string;
 };
 
-export async function getPlayer(uuid: string) {
+export async function getPlayer(uuid: string): Promise<MojangResponse | null> {
 	try {
 		const res = await fetch(
-			`https://api.minecraftservices.com/minecraft/profile/lookup/${encodeURIComponent(
-				uuid,
-			)}`,
+			`https://api.minecraftservices.com/minecraft/profile/lookup/${encodeURIComponent(uuid)}`,
 			{ next: { revalidate: 3600 } },
 		);
-		if (res.ok) {
-			return (await res.json()) as MojangResponse;
+		if (!res.ok) {
+			console.warn(
+				`[getPlayer] Non-OK response: ${res.status} ${res.statusText}`,
+			);
+			return null;
 		}
+		const data = (await res.json()) as MojangResponse;
+		return data ?? null;
 	} catch (error) {
 		console.log("Could not get player", error);
 		return null;
