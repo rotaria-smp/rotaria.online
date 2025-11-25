@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const SEO: Metadata = {
-	metadataBase: new URL("https://rotaria.online"),
+	metadataBase: new URL("https://www.rotaria.online/"),
 	title: {
 		default: "Rotaria SMP – Create Mod + 200+ Mods EU Community",
 		template: "%s | Rotaria SMP",
@@ -29,7 +29,7 @@ export const SEO: Metadata = {
 	openGraph: {
 		type: "website",
 		locale: "en_US",
-		url: "https://rotaria.online",
+		url: "https://www.rotaria.online/",
 		siteName: "Rotaria SMP",
 		title: "Rotaria SMP – Create Mod + 200+ Mods EU Community",
 		description:
@@ -57,7 +57,7 @@ export const SEO: Metadata = {
 	},
 	category: "gaming",
 	alternates: {
-		canonical: "https://rotaria.online",
+		canonical: "https://www.rotaria.online/",
 	},
 	robots: {
 		index: true,
