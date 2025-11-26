@@ -35,11 +35,7 @@ export async function getPlayerHead(
 		// ignore fetch errors
 		console.log("Could not fetch playerhead", error);
 	}
-
-	return {
-		name: data.name,
-		playerhead: `https://mc-heads.net/avatar/${id}/100.png`,
-	};
+	return null;
 }
 
 export type McStatusResponse = {
