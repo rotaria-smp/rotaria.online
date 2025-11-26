@@ -21,7 +21,6 @@ export function PlayerHead({ name, url, size = 64 }: PlayerHeadProps) {
 				width={size}
 				height={size}
 				className="block"
-				unoptimized
 			/>
 		</div>
 	);
