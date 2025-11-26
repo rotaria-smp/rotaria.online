@@ -27,8 +27,16 @@ export async function getPlayerHead(
 		if (res.ok) {
 			const data = (await res.json()) as MojangResponse;
 			return {
-				name: data.name,
-				playerhead: `https://mc-heads.net/avatar/${id}.png`,
+				name: data?.name ?? id,
+				playerhead: `https://mc-heads.net/avatar/${id}/100.png`,
+			};
+		} else {
+			console.warn(
+				`[getPlayerHead] Non-OK response: ${res.status} ${res.statusText}`,
+			);
+			return {
+				name: "",
+				playerhead: `https://mc-heads.net/avatar/${id}/100.png`,
 			};
 		}
 	} catch (error) {
