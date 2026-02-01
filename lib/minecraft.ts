@@ -3,6 +3,8 @@
  * Fetches UUID from Mojang API, caches result.
  */
 
+import { SERVER_ADDRESS } from "./constants";
+
 type ResponseProfile = {
 	name: string;
 	playerhead: string;
@@ -57,7 +59,7 @@ export type McStatusResponse = {
 export async function fetchStatus(): Promise<McStatusResponse> {
 	try {
 		const res = await fetch(
-			"https://api.mcstatus.io/v2/status/java/mc.rotaria.online",
+			`https://api.mcstatus.io/v2/status/java/${SERVER_ADDRESS}`,
 			{
 				// Revalidate every 60s
 				next: { revalidate: 60 },
