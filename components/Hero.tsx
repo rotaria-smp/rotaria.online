@@ -3,9 +3,9 @@ import { CubemapPanorama } from "./ui/CubemapPanorama";
 
 const cubemapFaces = {
 	right: "/panorama/1.png", // 90 degrees (right/left)
-	left: "/panorama/2.png", // -90 degrees
+	left: "/panorama/3.png", // -90 degrees
 	front: "/panorama/0.png", // 0 0 (forward)
-	back: "/panorama/3.png", // 180 0 (backward)
+	back: "/panorama/2.png", // 180 0 (backward)
 	up: "/panorama/top.png", // -90 90 (top)
 	down: "/panorama/bottom.png", // -90 -90 (bottom)
 };

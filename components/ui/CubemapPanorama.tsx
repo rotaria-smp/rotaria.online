@@ -21,20 +21,25 @@ interface CubemapPanoramaProps {
 	rotationSpeed?: number;
 }
 
-function CubemapSphere({
+interface CubemapPanoramaViewerProps {
+	faces: CubemapFaces;
+	autoRotate?: boolean;
+	rotationSpeed?: number;
+	fallbackImage?: string;
+}
+
+function CubemapBox({
 	faces,
 	autoRotate = false,
 	rotationSpeed = 0.001,
 }: CubemapPanoramaProps) {
 	const meshRef = useRef<THREE.Mesh>(null);
-	const { viewport, camera } = useThree();
 	const [textures, setTextures] = useState<{
 		[key: string]: THREE.Texture;
 	} | null>(null);
 	const [isMouseDown, setIsMouseDown] = useState(false);
 	const mouseRef = useRef({ x: 0, y: 0, lastX: 0, lastY: 0 });
 
-	// Load all 6 textures
 	useEffect(() => {
 		const loader = new THREE.TextureLoader();
 		const loadedTextures: { [key: string]: THREE.Texture } = {};
@@ -44,6 +49,10 @@ function CubemapSphere({
 			loader.load(url, (texture) => {
 				texture.minFilter = THREE.LinearFilter;
 				texture.magFilter = THREE.LinearFilter;
+				texture.wrapS = THREE.ClampToEdgeWrapping;
+				texture.wrapT = THREE.ClampToEdgeWrapping;
+				texture.generateMipmaps = false;
+
 				loadedTextures[key] = texture;
 				loadedCount++;
 
@@ -60,7 +69,7 @@ function CubemapSphere({
 		};
 	}, [faces]);
 
-	// Handle mouse movement for interactive rotation
+	// mouse drag rotation
 	useEffect(() => {
 		if (!autoRotate) {
 			const handleMouseMove = (e: MouseEvent) => {
@@ -70,14 +79,13 @@ function CubemapSphere({
 					mouseRef.current.x = e.clientX;
 					mouseRef.current.y = e.clientY;
 
-					const deltaX = mouseRef.current.x - mouseRef.current.lastX;
-					const deltaY = mouseRef.current.y - mouseRef.current.lastY;
+					const dx = mouseRef.current.x - mouseRef.current.lastX;
+					const dy = mouseRef.current.y - mouseRef.current.lastY;
 
 					if (meshRef.current) {
-						meshRef.current.rotation.y -= deltaX * 0.01;
-						meshRef.current.rotation.x -= deltaY * 0.01;
+						meshRef.current.rotation.y -= dx * 0.01;
+						meshRef.current.rotation.x -= dy * 0.01;
 
-						// Clamp vertical rotation to prevent over-rotation
 						meshRef.current.rotation.x = Math.max(
 							-Math.PI / 2,
 							Math.min(Math.PI / 2, meshRef.current.rotation.x),
@@ -109,28 +117,47 @@ function CubemapSphere({
 
 	if (!textures) return null;
 
-	// Create canvas-based cubemap material with 6 faces
-	const canvas = document.createElement("canvas");
-	canvas.width = 2048;
-	canvas.height = 2048;
-
 	return (
 		<mesh ref={meshRef}>
-			<sphereGeometry args={[100, 64, 64]} />
+			<boxGeometry args={[100, 100, 100]} />
 			<meshBasicMaterial
+				attach="material-0"
+				map={textures.right}
+				side={THREE.BackSide}
+				toneMapped={false}
+			/>
+			<meshBasicMaterial
+				attach="material-1"
+				map={textures.left}
+				side={THREE.BackSide}
+				toneMapped={false}
+			/>
+			<meshBasicMaterial
+				attach="material-2"
+				map={textures.up}
+				side={THREE.BackSide}
+				toneMapped={false}
+			/>
+			<meshBasicMaterial
+				attach="material-3"
+				map={textures.down}
+				side={THREE.BackSide}
+				toneMapped={false}
+			/>
+			<meshBasicMaterial
+				attach="material-4"
 				map={textures.front}
+				side={THREE.BackSide}
+				toneMapped={false}
+			/>
+			<meshBasicMaterial
+				attach="material-5"
+				map={textures.back}
 				side={THREE.BackSide}
 				toneMapped={false}
 			/>
 		</mesh>
 	);
-}
-
-interface CubemapPanoramaViewerProps {
-	faces: CubemapFaces;
-	autoRotate?: boolean;
-	rotationSpeed?: number;
-	fallbackImage?: string;
 }
 
 export function CubemapPanorama({
@@ -188,7 +215,7 @@ export function CubemapPanorama({
 				}}
 			>
 				<color attach="background" args={["#000000"]} />
-				<CubemapSphere
+				<CubemapBox
 					faces={faces}
 					autoRotate={autoRotate}
 					rotationSpeed={rotationSpeed}
