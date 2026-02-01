@@ -2,6 +2,7 @@
 import { motion } from "motion/react";
 import { Wifi, AlertTriangle, Users } from "lucide-react";
 import type { McStatusResponse } from "@/lib/minecraft";
+import { SERVER_ADDRESS } from "@/lib/constants";
 
 const cardVariants = {
 	hidden: { opacity: 0, y: 32, scale: 0.94 },
@@ -65,7 +66,7 @@ export function ServerStatus({ data }: { data: McStatusResponse }) {
 					</span>
 					<span className="text-gray-200 font-semibold">
 						<code className="px-0.5 md:px-1 py-0.5 rounded bg-gray-700 text-white font-mono text-sm">
-							mc.rotaria.online
+							{SERVER_ADDRESS}
 						</code>
 					</span>
 				</div>
