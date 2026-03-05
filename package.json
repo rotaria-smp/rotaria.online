@@ -43,6 +43,9 @@
 	"lint-staged": {
 		"*": "pnpm format"
 	},
+	"engines": {
+		"node": "24.14"
+	},
 	"pnpm": {
 		"overrides": {
 			"@types/react": "19.2.14",
