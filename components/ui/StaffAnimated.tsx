@@ -8,7 +8,6 @@ type StaffAnimatedProps = {
 		id: string;
 		name: string;
 		role: string;
-		description: string;
 		headUrl: string;
 	}>;
 };
@@ -53,16 +52,11 @@ export function StaffAnimated({ staff }: StaffAnimatedProps) {
 					whileTap={{ scale: 0.98 }}
 					className="minecraft-card text-center hover:border-orange-500 transition-colors will-change-transform"
 				>
-					<div className="flex justify-center mb-4">
+					<div className="flex justify-center mb-3">
 						<PlayerHead name={member.name} url={member.headUrl} size={64} />
 					</div>
-					<h3 className="minecraft-title text-xl mb-2 text-white">
-						{member.name}
-					</h3>
-					<p className="text-orange-400 font-bold mb-2">{member.role}</p>
-					<p className="text-sm text-gray-300 font-semibold">
-						{member.description}
-					</p>
+					<h3 className="minecraft-title text-xl text-white">{member.name}</h3>
+					<p className="text-orange-400 font-bold">{member.role}</p>
 				</motion.div>
 			))}
 		</motion.div>

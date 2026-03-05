@@ -1,5 +1,6 @@
 import { ExternalLink, Map as LMap } from "lucide-react";
 import { CubemapPanorama } from "./ui/CubemapPanorama";
+import { BLUEMAP_URL, DISCORD_INVITE } from "@/lib/constants";
 
 const cubemapFaces = {
 	right: "/panorama/1.png", // 90 degrees (right/left)
@@ -8,11 +9,6 @@ const cubemapFaces = {
 	back: "/panorama/2.png", // 180 0 (backward)
 	up: "/panorama/top.png", // -90 90 (top)
 	down: "/panorama/bottom.png", // -90 -90 (bottom)
-};
-
-const links = {
-	discord_url: "https://discord.gg/EENxMBaAkz",
-	bluemap_url: "https://bluemap.rotaria.online/",
 };
 
 export function Hero() {
@@ -46,7 +42,7 @@ export function Hero() {
 
 					<div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
 						<a
-							href={links?.discord_url || "#"}
+							href={DISCORD_INVITE}
 							target="_blank"
 							rel="noopener noreferrer"
 							className="minecraft-button-primary inline-flex items-center gap-3"
@@ -55,7 +51,7 @@ export function Hero() {
 							Join Discord
 						</a>
 						<a
-							href={links?.bluemap_url || "#"}
+							href={BLUEMAP_URL}
 							target="_blank"
 							rel="noopener noreferrer"
 							className="minecraft-button-secondary inline-flex items-center gap-3"
