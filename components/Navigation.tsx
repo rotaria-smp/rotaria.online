@@ -1,4 +1,3 @@
-"use client";
 export function Navigation() {
 	return (
 		<nav className="fixed top-0 left-0 right-0 z-50 bg-gray-900/95 border-b-4 border-gray-950">
