@@ -5,7 +5,7 @@ import { useState } from "react";
 export function Navigation() {
 	const [isOpen, setIsOpen] = useState(false);
 	const links: { discord_url?: string } | undefined = {
-		discord_url: "https://discord.gg/EENxMBaAkz",
+		discord_url: "https://discord.gg/D6uMxU7xDQ",
 	};
 
 	return (

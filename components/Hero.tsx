@@ -11,7 +11,7 @@ const cubemapFaces = {
 };
 
 const links = {
-	discord_url: "https://discord.gg/EENxMBaAkz",
+	discord_url: "https://discord.gg/D6uMxU7xDQ",
 	bluemap_url: "https://bluemap.rotaria.online/",
 };
 

@@ -2,7 +2,7 @@ import { Map as LMap, MessageCircle } from "lucide-react";
 import Link from "next/link";
 export function Footer() {
 	const links: { discord_url?: string; bluemap_url?: string } | undefined = {
-		discord_url: "https://discord.gg/EENxMBaAkz",
+		discord_url: "https://discord.gg/D6uMxU7xDQ",
 		bluemap_url: "https://bluemap.rotaria.online/",
 	};
 
