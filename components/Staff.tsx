@@ -4,46 +4,48 @@ import { StaffAnimated } from "@/components/ui/StaffAnimated";
 type StaffMemberBase = {
 	id: string;
 	role: string;
-	icon_type: string;
-	description: string;
 };
 
 const STAFF_BASE: StaffMemberBase[] = [
 	{
 		id: "55374620bd114865a5a4e97cd18849a3", // awiant
 		role: "Owner",
-		icon_type: "crown",
-		description: "Handles vision, community tone, and long–term planning.",
 	},
 	{
 		id: "bb2a6b1a56e944adaa7703405c2e427d", // wenia
 		role: "Co owner",
-		icon_type: "crown",
-		description: "Handles vision, community tone, and long–term planning.",
 	},
 	{
 		id: "7f984748a523417f978641216e33aa97", // dupe
-		role: "Staff",
-		icon_type: "wrench",
-		description: "Modpack tweaks, performance profiling, backend maintenance.",
+		role: "Co owner",
 	},
 	{
-		id: "dddbc42f7025495b8beb151200305d5d", // grizzi
-		role: "Staff",
-		icon_type: "shield",
-		description: "Welcomes new players and moderates the server.",
+		id: "ab4f3227390946888cc476016d72cf7f", // _oan
+		role: "Moderator",
+	},
+	{
+		id: "019cfd13994b406795dbce3406dc2358", // britland
+		role: "Moderator",
+	},
+	{
+		id: "61d76b2430ff4fe585d86097df0567ad", // rueray
+		role: "Moderator",
+	},
+	{
+		id: "1a16f07ca78d4af593587e374a75486c", // worddotexe
+		role: "Moderator",
 	},
 	{
 		id: "54641d3d4ce247419feeb88e3f8ceb53", // jag
-		role: "Developer",
-		icon_type: "shield",
-		description: "Bot, mod and software development.",
+		role: "Head Developer",
 	},
 	{
-		id: "754c940300604297be70c84689b54c70", // Q29jYWluYQ
+		id: "bebc8ced77dd4e30ac412926656f75dc", // demozo
 		role: "Developer",
-		icon_type: "shield",
-		description: "Bot, mod and software development.",
+	},
+	{
+		id: "14e09e51bfdf4512bfddd6d61638fcae", // MerlinMadHat
+		role: "Developer",
 	},
 ];
 

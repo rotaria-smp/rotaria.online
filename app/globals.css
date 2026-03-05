@@ -55,7 +55,7 @@
 }
 
 @utility minecraft-card {
-	@apply bg-gray-800/70 border-4 border-gray-900 p-6;
+	@apply bg-gray-800/70 border-4 border-gray-900 p-3;
 	box-shadow:
 		-4px -4px 0 rgba(255, 255, 255, 0.1),
 		4px 4px 0 rgba(0, 0, 0, 0.5);
