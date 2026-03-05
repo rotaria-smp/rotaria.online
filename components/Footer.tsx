@@ -1,11 +1,7 @@
+import { BLUEMAP_URL, DISCORD_INVITE } from "@/lib/constants";
 import { Map as LMap, MessageCircle } from "lucide-react";
 import Link from "next/link";
 export function Footer() {
-	const links: { discord_url?: string; bluemap_url?: string } | undefined = {
-		discord_url: "https://discord.gg/D6uMxU7xDQ",
-		bluemap_url: "https://bluemap.rotaria.online/",
-	};
-
 	return (
 		<footer className="bg-gray-950 border-t-4 border-gray-900 py-12 px-4 sm:px-6 lg:px-8">
 			<div className="max-w-7xl mx-auto">
@@ -59,7 +55,7 @@ export function Footer() {
 						</h3>
 						<div className="space-y-3">
 							<a
-								href={links?.discord_url || "#"}
+								href={DISCORD_INVITE}
 								target="_blank"
 								rel="noopener noreferrer"
 								className="flex items-center gap-2 text-gray-300 hover:text-orange-400 transition-colors font-semibold"
@@ -68,7 +64,7 @@ export function Footer() {
 								Discord Server
 							</a>
 							<a
-								href={links?.bluemap_url || "#"}
+								href={BLUEMAP_URL}
 								target="_blank"
 								rel="noopener noreferrer"
 								className="flex items-center gap-2 text-gray-300 hover:text-orange-400 transition-colors font-semibold"
@@ -76,13 +72,6 @@ export function Footer() {
 								<LMap size={20} />
 								World Map
 							</a>
-							{/* <a
-								href="#"
-								className="flex items-center gap-2 text-gray-300 hover:text-orange-400 transition-colors font-semibold"
-							>
-								<Code size={20} />
-								Wiki / Docs
-							</a> */}
 						</div>
 					</div>
 				</div>
